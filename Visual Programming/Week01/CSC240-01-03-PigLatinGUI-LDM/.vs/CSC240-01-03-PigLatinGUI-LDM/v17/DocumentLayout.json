@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\SCHOOL\\SCHOOL\\Winter 2026\\Visual Programming\\Week01\\CSC240-01-03-PigLatinGUI-LDM\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4C593F5C-AE8D-449C-9C43-5B3790BC20CC}|CSC240-01-03-PigLatinGUI-LDM\\CSC240-01-03-PigLatinGUI-LDM.csproj|d:\\school\\school\\winter 2026\\visual programming\\week01\\csc240-01-03-piglatingui-ldm\\csc240-01-03-piglatingui-ldm\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C593F5C-AE8D-449C-9C43-5B3790BC20CC}|CSC240-01-03-PigLatinGUI-LDM\\CSC240-01-03-PigLatinGUI-LDM.csproj|solutionrelative:csc240-01-03-piglatingui-ldm\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C593F5C-AE8D-449C-9C43-5B3790BC20CC}|CSC240-01-03-PigLatinGUI-LDM\\CSC240-01-03-PigLatinGUI-LDM.csproj|d:\\school\\school\\winter 2026\\visual programming\\week01\\csc240-01-03-piglatingui-ldm\\csc240-01-03-piglatingui-ldm\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4C593F5C-AE8D-449C-9C43-5B3790BC20CC}|CSC240-01-03-PigLatinGUI-LDM\\CSC240-01-03-PigLatinGUI-LDM.csproj|solutionrelative:csc240-01-03-piglatingui-ldm\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C593F5C-AE8D-449C-9C43-5B3790BC20CC}|CSC240-01-03-PigLatinGUI-LDM\\CSC240-01-03-PigLatinGUI-LDM.csproj|d:\\school\\school\\winter 2026\\visual programming\\week01\\csc240-01-03-piglatingui-ldm\\csc240-01-03-piglatingui-ldm\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C593F5C-AE8D-449C-9C43-5B3790BC20CC}|CSC240-01-03-PigLatinGUI-LDM\\CSC240-01-03-PigLatinGUI-LDM.csproj|solutionrelative:csc240-01-03-piglatingui-ldm\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "D:\\SCHOOL\\SCHOOL\\Winter 2026\\Visual Programming\\Week01\\CSC240-01-03-PigLatinGUI-LDM\\CSC240-01-03-PigLatinGUI-LDM\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "CSC240-01-03-PigLatinGUI-LDM\\Form1.Designer.cs",
+              "ToolTip": "D:\\SCHOOL\\SCHOOL\\Winter 2026\\Visual Programming\\Week01\\CSC240-01-03-PigLatinGUI-LDM\\CSC240-01-03-PigLatinGUI-LDM\\Form1.Designer.cs",
+              "RelativeToolTip": "CSC240-01-03-PigLatinGUI-LDM\\Form1.Designer.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAYwBsAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T23:33:58.193Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\SCHOOL\\SCHOOL\\Winter 2026\\Visual Programming\\Week01\\CSC240-01-03-PigLatinGUI-LDM\\CSC240-01-03-PigLatinGUI-LDM\\Form1.cs",
+              "RelativeDocumentMoniker": "CSC240-01-03-PigLatinGUI-LDM\\Form1.cs",
+              "ToolTip": "D:\\SCHOOL\\SCHOOL\\Winter 2026\\Visual Programming\\Week01\\CSC240-01-03-PigLatinGUI-LDM\\CSC240-01-03-PigLatinGUI-LDM\\Form1.cs",
+              "RelativeToolTip": "CSC240-01-03-PigLatinGUI-LDM\\Form1.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T23:33:53.328Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "D:\\SCHOOL\\SCHOOL\\Winter 2026\\Visual Programming\\Week01\\CSC240-01-03-PigLatinGUI-LDM\\CSC240-01-03-PigLatinGUI-LDM\\Form1.cs",
+              "RelativeDocumentMoniker": "CSC240-01-03-PigLatinGUI-LDM\\Form1.cs",
+              "ToolTip": "D:\\SCHOOL\\SCHOOL\\Winter 2026\\Visual Programming\\Week01\\CSC240-01-03-PigLatinGUI-LDM\\CSC240-01-03-PigLatinGUI-LDM\\Form1.cs [Design]",
+              "RelativeToolTip": "CSC240-01-03-PigLatinGUI-LDM\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T23:32:50.285Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

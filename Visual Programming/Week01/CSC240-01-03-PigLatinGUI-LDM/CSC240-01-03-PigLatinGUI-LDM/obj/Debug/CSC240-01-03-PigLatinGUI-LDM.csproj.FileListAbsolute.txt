@@ -1,0 +1,9 @@
+D:\SCHOOL\SCHOOL\Winter 2026\Visual Programming\Week01\CSC240-01-03-PigLatinGUI-LDM\CSC240-01-03-PigLatinGUI-LDM\bin\Debug\CSC240-01-03-PigLatinGUI-LDM.exe.config
+D:\SCHOOL\SCHOOL\Winter 2026\Visual Programming\Week01\CSC240-01-03-PigLatinGUI-LDM\CSC240-01-03-PigLatinGUI-LDM\bin\Debug\CSC240-01-03-PigLatinGUI-LDM.exe
+D:\SCHOOL\SCHOOL\Winter 2026\Visual Programming\Week01\CSC240-01-03-PigLatinGUI-LDM\CSC240-01-03-PigLatinGUI-LDM\bin\Debug\CSC240-01-03-PigLatinGUI-LDM.pdb
+D:\SCHOOL\SCHOOL\Winter 2026\Visual Programming\Week01\CSC240-01-03-PigLatinGUI-LDM\CSC240-01-03-PigLatinGUI-LDM\obj\Debug\CSC240-01-03-PigLatinGUI-LDM.csproj.AssemblyReference.cache
+D:\SCHOOL\SCHOOL\Winter 2026\Visual Programming\Week01\CSC240-01-03-PigLatinGUI-LDM\CSC240-01-03-PigLatinGUI-LDM\obj\Debug\CSC240_01_03_PigLatinGUI_LDM.Properties.Resources.resources
+D:\SCHOOL\SCHOOL\Winter 2026\Visual Programming\Week01\CSC240-01-03-PigLatinGUI-LDM\CSC240-01-03-PigLatinGUI-LDM\obj\Debug\CSC240-01-03-PigLatinGUI-LDM.csproj.GenerateResource.cache
+D:\SCHOOL\SCHOOL\Winter 2026\Visual Programming\Week01\CSC240-01-03-PigLatinGUI-LDM\CSC240-01-03-PigLatinGUI-LDM\obj\Debug\CSC240-01-03-PigLatinGUI-LDM.csproj.CoreCompileInputs.cache
+D:\SCHOOL\SCHOOL\Winter 2026\Visual Programming\Week01\CSC240-01-03-PigLatinGUI-LDM\CSC240-01-03-PigLatinGUI-LDM\obj\Debug\CSC240-01-03-PigLatinGUI-LDM.exe
+D:\SCHOOL\SCHOOL\Winter 2026\Visual Programming\Week01\CSC240-01-03-PigLatinGUI-LDM\CSC240-01-03-PigLatinGUI-LDM\obj\Debug\CSC240-01-03-PigLatinGUI-LDM.pdb

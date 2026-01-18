@@ -1,0 +1,109 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\SCHOOL\\SCHOOL\\Winter 2026\\Visual Programming\\Week01\\CSC240-01-02-TestsInteractiveGUI-LDM\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|CSC240-01-02-TestsInteractiveGUI-LDM||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BCF1573C-5984-40D0-868D-AEC92DB09726}|TestsInteractiveGUI\\CSC240-01-02-TestsInteractiveGUI-LDM.csproj|D:\\SCHOOL\\SCHOOL\\Winter 2026\\Visual Programming\\Week01\\CSC240-01-02-TestsInteractiveGUI-LDM\\testsinteractivegui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BCF1573C-5984-40D0-868D-AEC92DB09726}|TestsInteractiveGUI\\CSC240-01-02-TestsInteractiveGUI-LDM.csproj|solutionrelative:testsinteractivegui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BCF1573C-5984-40D0-868D-AEC92DB09726}|TestsInteractiveGUI\\CSC240-01-02-TestsInteractiveGUI-LDM.csproj|d:\\school\\school\\winter 2026\\visual programming\\week01\\csc240-01-02-testsinteractivegui-ldm\\testsinteractivegui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BCF1573C-5984-40D0-868D-AEC92DB09726}|TestsInteractiveGUI\\CSC240-01-02-TestsInteractiveGUI-LDM.csproj|solutionrelative:testsinteractivegui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BCF1573C-5984-40D0-868D-AEC92DB09726}|TestsInteractiveGUI\\CSC240-01-02-TestsInteractiveGUI-LDM.csproj|d:\\school\\school\\winter 2026\\visual programming\\week01\\csc240-01-02-testsinteractivegui-ldm\\testsinteractivegui\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BCF1573C-5984-40D0-868D-AEC92DB09726}|TestsInteractiveGUI\\CSC240-01-02-TestsInteractiveGUI-LDM.csproj|solutionrelative:testsinteractivegui\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BCF1573C-5984-40D0-868D-AEC92DB09726}|TestsInteractiveGUI\\CSC240-01-02-TestsInteractiveGUI-LDM.csproj|d:\\school\\school\\winter 2026\\visual programming\\week01\\csc240-01-02-testsinteractivegui-ldm\\testsinteractivegui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BCF1573C-5984-40D0-868D-AEC92DB09726}|TestsInteractiveGUI\\CSC240-01-02-TestsInteractiveGUI-LDM.csproj|solutionrelative:testsinteractivegui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BCF1573C-5984-40D0-868D-AEC92DB09726}|TestsInteractiveGUI\\CSC240-01-02-TestsInteractiveGUI-LDM.csproj|d:\\school\\school\\winter 2026\\visual programming\\week01\\csc240-01-02-testsinteractivegui-ldm\\testsinteractivegui\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|5e9a8ac2-4f34-4521-858f-4c248ba31532"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\SCHOOL\\SCHOOL\\Winter 2026\\Visual Programming\\Week01\\CSC240-01-02-TestsInteractiveGUI-LDM\\TestsInteractiveGUI\\Program.cs",
+              "RelativeDocumentMoniker": "TestsInteractiveGUI\\Program.cs",
+              "ToolTip": "D:\\SCHOOL\\SCHOOL\\Winter 2026\\Visual Programming\\Week01\\CSC240-01-02-TestsInteractiveGUI-LDM\\TestsInteractiveGUI\\Program.cs",
+              "RelativeToolTip": "TestsInteractiveGUI\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-09T04:59:00.319Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "D:\\SCHOOL\\SCHOOL\\Winter 2026\\Visual Programming\\Week01\\CSC240-01-02-TestsInteractiveGUI-LDM\\TestsInteractiveGUI\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "TestsInteractiveGUI\\Form1.Designer.cs",
+              "ToolTip": "D:\\SCHOOL\\SCHOOL\\Winter 2026\\Visual Programming\\Week01\\CSC240-01-02-TestsInteractiveGUI-LDM\\TestsInteractiveGUI\\Form1.Designer.cs",
+              "RelativeToolTip": "TestsInteractiveGUI\\Form1.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-09T04:53:11.544Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "D:\\SCHOOL\\SCHOOL\\Winter 2026\\Visual Programming\\Week01\\CSC240-01-02-TestsInteractiveGUI-LDM\\TestsInteractiveGUI\\Form1.cs",
+              "RelativeDocumentMoniker": "TestsInteractiveGUI\\Form1.cs",
+              "ToolTip": "D:\\SCHOOL\\SCHOOL\\Winter 2026\\Visual Programming\\Week01\\CSC240-01-02-TestsInteractiveGUI-LDM\\TestsInteractiveGUI\\Form1.cs [Design]",
+              "RelativeToolTip": "TestsInteractiveGUI\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-09T04:53:11.943Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CSC240-01-02-TestsInteractiveGUI-LDM",
+              "DocumentMoniker": "D:\\SCHOOL\\SCHOOL\\Winter 2026\\Visual Programming\\Week01\\CSC240-01-02-TestsInteractiveGUI-LDM\\TestsInteractiveGUI\\CSC240-01-02-TestsInteractiveGUI-LDM.csproj",
+              "RelativeDocumentMoniker": "TestsInteractiveGUI\\CSC240-01-02-TestsInteractiveGUI-LDM.csproj",
+              "ToolTip": "D:\\SCHOOL\\SCHOOL\\Winter 2026\\Visual Programming\\Week01\\CSC240-01-02-TestsInteractiveGUI-LDM\\TestsInteractiveGUI\\CSC240-01-02-TestsInteractiveGUI-LDM.csproj",
+              "RelativeToolTip": "TestsInteractiveGUI\\CSC240-01-02-TestsInteractiveGUI-LDM.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-01-09T04:45:58.475Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\SCHOOL\\SCHOOL\\Winter 2026\\Visual Programming\\Week01\\CSC240-01-02-TestsInteractiveGUI-LDM\\TestsInteractiveGUI\\Form1.cs",
+              "RelativeDocumentMoniker": "TestsInteractiveGUI\\Form1.cs",
+              "ToolTip": "D:\\SCHOOL\\SCHOOL\\Winter 2026\\Visual Programming\\Week01\\CSC240-01-02-TestsInteractiveGUI-LDM\\TestsInteractiveGUI\\Form1.cs",
+              "RelativeToolTip": "TestsInteractiveGUI\\Form1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-09T04:26:19.546Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
