@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\SCHOOL\\SCHOOL\\Winter 2026\\Visual Programming\\Week02\\CSC240-02-02-ArrayDemo2-LDM\\CSC240-02-02-ArrayDemo2-LDM.csproj",
+      "projectUniqueName": "D:\\SCHOOL\\SCHOOL\\GitHubFolder\\CSC-240 Visual Programming\\Git\\CSC240\\Visual Programming\\Week02\\CSC240-02-02-ArrayDemo2-LDM\\CSC240-02-02-ArrayDemo2-LDM.csproj",
       "projectName": "CSC240-02-02-ArrayDemo2-LDM",
-      "projectPath": "D:\\SCHOOL\\SCHOOL\\Winter 2026\\Visual Programming\\Week02\\CSC240-02-02-ArrayDemo2-LDM\\CSC240-02-02-ArrayDemo2-LDM.csproj",
+      "projectPath": "D:\\SCHOOL\\SCHOOL\\GitHubFolder\\CSC-240 Visual Programming\\Git\\CSC240\\Visual Programming\\Week02\\CSC240-02-02-ArrayDemo2-LDM\\CSC240-02-02-ArrayDemo2-LDM.csproj",
       "packagesPath": "C:\\Users\\ldale\\.nuget\\packages\\",
-      "outputPath": "D:\\SCHOOL\\SCHOOL\\Winter 2026\\Visual Programming\\Week02\\CSC240-02-02-ArrayDemo2-LDM\\obj\\",
+      "outputPath": "D:\\SCHOOL\\SCHOOL\\GitHubFolder\\CSC-240 Visual Programming\\Git\\CSC240\\Visual Programming\\Week02\\CSC240-02-02-ArrayDemo2-LDM\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
