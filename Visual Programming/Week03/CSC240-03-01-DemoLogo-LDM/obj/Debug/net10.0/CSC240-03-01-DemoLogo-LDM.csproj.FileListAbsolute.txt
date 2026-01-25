@@ -1,0 +1,14 @@
+D:\SCHOOL\SCHOOL\Winter 2026\Visual Programming\Week03\CSC240-03-01-DemoLogo-LDM\bin\Debug\net10.0\CSC240-03-01-DemoLogo-LDM.exe
+D:\SCHOOL\SCHOOL\Winter 2026\Visual Programming\Week03\CSC240-03-01-DemoLogo-LDM\bin\Debug\net10.0\CSC240-03-01-DemoLogo-LDM.deps.json
+D:\SCHOOL\SCHOOL\Winter 2026\Visual Programming\Week03\CSC240-03-01-DemoLogo-LDM\bin\Debug\net10.0\CSC240-03-01-DemoLogo-LDM.runtimeconfig.json
+D:\SCHOOL\SCHOOL\Winter 2026\Visual Programming\Week03\CSC240-03-01-DemoLogo-LDM\bin\Debug\net10.0\CSC240-03-01-DemoLogo-LDM.dll
+D:\SCHOOL\SCHOOL\Winter 2026\Visual Programming\Week03\CSC240-03-01-DemoLogo-LDM\bin\Debug\net10.0\CSC240-03-01-DemoLogo-LDM.pdb
+D:\SCHOOL\SCHOOL\Winter 2026\Visual Programming\Week03\CSC240-03-01-DemoLogo-LDM\obj\Debug\net10.0\CSC240-03-01-DemoLogo-LDM.GeneratedMSBuildEditorConfig.editorconfig
+D:\SCHOOL\SCHOOL\Winter 2026\Visual Programming\Week03\CSC240-03-01-DemoLogo-LDM\obj\Debug\net10.0\CSC240-03-01-DemoLogo-LDM.AssemblyInfoInputs.cache
+D:\SCHOOL\SCHOOL\Winter 2026\Visual Programming\Week03\CSC240-03-01-DemoLogo-LDM\obj\Debug\net10.0\CSC240-03-01-DemoLogo-LDM.AssemblyInfo.cs
+D:\SCHOOL\SCHOOL\Winter 2026\Visual Programming\Week03\CSC240-03-01-DemoLogo-LDM\obj\Debug\net10.0\CSC240-03-01-DemoLogo-LDM.csproj.CoreCompileInputs.cache
+D:\SCHOOL\SCHOOL\Winter 2026\Visual Programming\Week03\CSC240-03-01-DemoLogo-LDM\obj\Debug\net10.0\CSC240-03-01-DemoLogo-LDM.dll
+D:\SCHOOL\SCHOOL\Winter 2026\Visual Programming\Week03\CSC240-03-01-DemoLogo-LDM\obj\Debug\net10.0\refint\CSC240-03-01-DemoLogo-LDM.dll
+D:\SCHOOL\SCHOOL\Winter 2026\Visual Programming\Week03\CSC240-03-01-DemoLogo-LDM\obj\Debug\net10.0\CSC240-03-01-DemoLogo-LDM.pdb
+D:\SCHOOL\SCHOOL\Winter 2026\Visual Programming\Week03\CSC240-03-01-DemoLogo-LDM\obj\Debug\net10.0\CSC240-03-01-DemoLogo-LDM.genruntimeconfig.cache
+D:\SCHOOL\SCHOOL\Winter 2026\Visual Programming\Week03\CSC240-03-01-DemoLogo-LDM\obj\Debug\net10.0\ref\CSC240-03-01-DemoLogo-LDM.dll
