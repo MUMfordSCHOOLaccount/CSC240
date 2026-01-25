@@ -34,6 +34,29 @@ public class AdmissionForm : Form
         this.Controls.Add(btnCheck);
         this.Controls.Add(lblResult);
 
-        // Event handler will be added later
+        // Add event handler
+        btnCheck.Click += BtnCheck_Click;
+    }
+
+    private void BtnCheck_Click(object sender, EventArgs e)
+    {
+        if (!double.TryParse(txtGPA.Text, out double gpa))
+        {
+            lblResult.Text = "Invalid GPA";
+            return;
+        }
+        if (!int.TryParse(txtTestScore.Text, out int score))
+        {
+            lblResult.Text = "Invalid Test Score";
+            return;
+        }
+        if ((gpa >= 3.0 && score >= 60) || (gpa < 3.0 && score >= 80))
+        {
+            lblResult.Text = "Accept";
+        }
+        else
+        {
+            lblResult.Text = "Reject";
+        }
     }
 }
