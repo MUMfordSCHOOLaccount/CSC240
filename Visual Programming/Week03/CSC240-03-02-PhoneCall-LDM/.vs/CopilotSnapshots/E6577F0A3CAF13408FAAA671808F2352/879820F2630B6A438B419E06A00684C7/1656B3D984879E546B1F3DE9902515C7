@@ -1,0 +1,25 @@
+﻿using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter the number of minutes for the call: ");
+        int minutes = int.Parse(Console.ReadLine());
+        double charge = CalculateCharge(minutes);
+        Console.WriteLine($"The charge for the call is ${charge:F2}");
+    }
+
+    static double CalculateCharge(int minutes)
+    {
+        const double RATE_PER_MINUTE = 0.25;
+        if (minutes <= 1)
+        {
+            return 0.0;
+        }
+        else
+        {
+            return (minutes - 1) * RATE_PER_MINUTE;
+        }
+    }
+}
