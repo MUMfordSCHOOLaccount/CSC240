@@ -9,4 +9,11 @@ class PhoneCall
         call_fee = base_fee + minutes * rate;
         return call_fee;
     }
+
+    static void Main()
+    {
+        int[] callLengths = {2, 5};
+        double[] rates = {0.03, 0.12};
+        double priceOfCall;
+    }
 }
