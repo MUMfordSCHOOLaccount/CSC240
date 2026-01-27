@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CSC240-03-02-PhoneCall-LDM")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0a621b430821ff9039bb5f9320a1bef359b72521")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cc521d681f94ed1b06592009ccf8ba849d35b6d4")]
 [assembly: System.Reflection.AssemblyProductAttribute("CSC240-03-02-PhoneCall-LDM")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CSC240-03-02-PhoneCall-LDM")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

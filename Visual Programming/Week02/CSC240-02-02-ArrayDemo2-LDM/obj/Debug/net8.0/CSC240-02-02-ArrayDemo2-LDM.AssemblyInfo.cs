@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CSC240-02-02-ArrayDemo2-LDM")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5878bc5ac241bffefd3be00523eb9d8e2f92c252")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cc521d681f94ed1b06592009ccf8ba849d35b6d4")]
 [assembly: System.Reflection.AssemblyProductAttribute("CSC240-02-02-ArrayDemo2-LDM")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CSC240-02-02-ArrayDemo2-LDM")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
