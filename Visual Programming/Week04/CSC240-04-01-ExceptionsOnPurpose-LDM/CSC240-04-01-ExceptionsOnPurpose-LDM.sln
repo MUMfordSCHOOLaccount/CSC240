@@ -1,7 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+<<<<<<< Updated upstream
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36908.2
+=======
+# Visual Studio Version 18
+VisualStudioVersion = 18.2.11415.280 d18.0
+>>>>>>> Stashed changes
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionsOnPurpose", "ExceptionsOnPurpose\ExceptionsOnPurpose.csproj", "{D1A6B62B-BA85-4E79-869B-820C425A3154}"
 EndProject
