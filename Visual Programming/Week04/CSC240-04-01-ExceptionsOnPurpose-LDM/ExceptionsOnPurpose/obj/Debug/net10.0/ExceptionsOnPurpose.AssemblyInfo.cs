@@ -14,7 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ExceptionsOnPurpose")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< Updated upstream
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f46f2985a67036350bc4bcffe52f96fbd0dbc2e1")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+762d092e3df1257be226ceebd41bc83156578f5c")]
+>>>>>>> Stashed changes
 [assembly: System.Reflection.AssemblyProductAttribute("ExceptionsOnPurpose")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ExceptionsOnPurpose")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
