@@ -1,2 +1,17 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using System;
+using static System.Console;
+
+class ExceptionsOnPurpose
+{
+    static void Main()
+    {
+        int answer;
+        int result;
+        int zero = 0;
+
+        Write("Enter an integer >> ");
+        answer = Convert.ToInt32(ReadLine());
+        result = answer / zero; // will throw DivideByZeroException when executed
+        WriteLine("The answer is " + answer);
+    }
+}
