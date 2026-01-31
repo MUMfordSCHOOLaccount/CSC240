@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36915.13 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSC240-04-02-ExceptionHandlingDemoGUI-LDM", "CSC240-04-02-ExceptionHandlingDemoGUI-LDM.csproj", "{51C9CB3E-A260-405F-B460-559E3DBB5F93}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51C9CB3E-A260-405F-B460-559E3DBB5F93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51C9CB3E-A260-405F-B460-559E3DBB5F93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51C9CB3E-A260-405F-B460-559E3DBB5F93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51C9CB3E-A260-405F-B460-559E3DBB5F93}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E05AED07-9969-4702-BBE1-C9CD49E13716}
+	EndGlobalSection
+EndGlobal
