@@ -1,3 +1,6 @@
+using System;
+using System.Windows.Forms;
+
 namespace CSC240_06_03_CarDealer_LDM;
 
 static class Program
