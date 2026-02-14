@@ -9,4 +9,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="CSC240-06-02-FiveColors2-LDM\CSC240-06-02-FiveColors2-LDM.csproj" />
+    <None Include="FiveColors2\FiveColors2.csproj" />
+  </ItemGroup>
+
 </Project>
