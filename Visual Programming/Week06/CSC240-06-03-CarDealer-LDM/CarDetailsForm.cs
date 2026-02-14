@@ -4,9 +4,6 @@ using System.Windows.Forms;
 
 namespace CSC240_06_03_CarDealer_LDM
 {
-    /// <summary>
-    /// Details form that displays information about the selected car model.
-    /// </summary>
     public partial class CarDetailsForm : Form
     {
         private string carModel;
@@ -18,9 +15,6 @@ namespace CSC240_06_03_CarDealer_LDM
             DisplayCarDetails();
         }
 
-        /// <summary>
-        /// Displays detailed information about the selected car model.
-        /// </summary>
         private void DisplayCarDetails()
         {
             switch (carModel)
@@ -38,7 +32,7 @@ namespace CSC240_06_03_CarDealer_LDM
                         "• Lane keeping assist\n" +
                         "• Sunroof\n" +
                         "• Navigation system";
-                    this.BackColor = System.Drawing.Color.LightBlue;
+                    this.BackColor = Color.LightBlue;
                     break;
 
                 case "SUV":
@@ -54,7 +48,7 @@ namespace CSC240_06_03_CarDealer_LDM
                         "• 360-degree camera\n" +
                         "• Towing package (5,000 lbs)\n" +
                         "• Cargo management system";
-                    this.BackColor = System.Drawing.Color.LightGreen;
+                    this.BackColor = Color.LightGreen;
                     break;
 
                 case "Truck":
@@ -70,7 +64,7 @@ namespace CSC240_06_03_CarDealer_LDM
                         "• 4WD system\n" +
                         "• Backup camera\n" +
                         "• Trailer brake controller";
-                    this.BackColor = System.Drawing.Color.LightYellow;
+                    this.BackColor = Color.LightYellow;
                     break;
 
                 case "Sports":
@@ -86,15 +80,12 @@ namespace CSC240_06_03_CarDealer_LDM
                         "• Carbon fiber accents\n" +
                         "• Launch control\n" +
                         "• Track mode";
-                    this.BackColor = System.Drawing.Color.LightCoral;
+                    this.BackColor = Color.LightCoral;
                     break;
             }
         }
 
-        /// <summary>
-        /// Event handler for close button - closes the details form.
-        /// </summary>
-        private void closeButton_Click(object? sender, EventArgs e)
+        private void closeButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
