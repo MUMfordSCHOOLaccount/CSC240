@@ -6,7 +6,7 @@ namespace CSC240_06_02_FiveColors2_LDM
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new FiveColorsForm());
+            Application.Run(new MainForm());
         }
     }
 }
