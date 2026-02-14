@@ -28,6 +28,7 @@
         /// </summary>
         private System.Windows.Forms.Label welcomeLabel;
         private System.Windows.Forms.Label rateLabel;
+        private System.Windows.Forms.Button showRatesButton;
 
         private void InitializeComponent()
         {
@@ -56,11 +57,23 @@
             this.rateLabel.TabIndex = 1;
             this.rateLabel.Text = "Check our rates";
             // 
+            // showRatesButton
+            // 
+            this.showRatesButton = new System.Windows.Forms.Button();
+            this.showRatesButton.Location = new System.Drawing.Point(320, 160);
+            this.showRatesButton.Name = "showRatesButton";
+            this.showRatesButton.Size = new System.Drawing.Size(120, 36);
+            this.showRatesButton.TabIndex = 2;
+            this.showRatesButton.Text = "Show Rates";
+            this.showRatesButton.UseVisualStyleBackColor = true;
+            this.showRatesButton.Click += new System.EventHandler(this.showRatesButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Yellow;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.showRatesButton);
             this.Controls.Add(this.rateLabel);
             this.Controls.Add(this.welcomeLabel);
             this.Name = "BaileysForm";
