@@ -6,7 +6,6 @@
     <RootNamespace>CSC240_06_03_CarDealer_LDM</RootNamespace>
     <Nullable>disable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
-    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
 </Project>
