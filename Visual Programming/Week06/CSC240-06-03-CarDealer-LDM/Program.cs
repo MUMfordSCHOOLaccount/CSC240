@@ -11,8 +11,16 @@ static class Program
     [STAThread]
     static void Main()
     {
-        Application.EnableVisualStyles();
-        Application.SetCompatibleTextRenderingDefault(false);
-        Application.Run(new CarSelectionForm());
+        try
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new CarSelectionForm());
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Error starting application:\n{ex.Message}\n\nStack Trace:\n{ex.StackTrace}", 
+                "Application Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }    
 }
