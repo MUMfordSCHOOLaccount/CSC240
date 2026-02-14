@@ -1,10 +1,13 @@
-namespace FiveColors2
+namespace CSC240_06_02_FiveColors2_LDM
 {
     public partial class MainForm : Form
     {
+        private Color defaultBackColor;
+
         public MainForm()
         {
             InitializeComponent();
+            defaultBackColor = this.BackColor;
         }
 
         private void colorRadio_CheckedChanged(object? sender, EventArgs e)
@@ -30,6 +33,16 @@ namespace FiveColors2
                         break;
                 }
             }
+        }
+
+        private void resetButton_Click(object? sender, EventArgs e)
+        {
+            this.BackColor = defaultBackColor;
+            redRadio.Checked = false;
+            greenRadio.Checked = false;
+            blueRadio.Checked = false;
+            yellowRadio.Checked = false;
+            purpleRadio.Checked = false;
         }
     }
 }

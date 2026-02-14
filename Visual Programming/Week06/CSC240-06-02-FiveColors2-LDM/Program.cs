@@ -1,4 +1,4 @@
-namespace FiveColors2
+namespace CSC240_06_02_FiveColors2_LDM
 {
     internal static class Program
     {
