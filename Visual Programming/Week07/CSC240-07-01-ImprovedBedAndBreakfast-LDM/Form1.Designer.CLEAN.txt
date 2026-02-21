@@ -1,0 +1,180 @@
+namespace CSC240_07_01_ImprovedBedAndBreakfast_LDM
+{
+    partial class Form1
+    {
+        /// <summary>
+        ///  Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        ///  Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        ///  Required method for Designer support - do not modify
+        ///  the contents of this method with the code editor.
+        /// </summary>
+        private System.Windows.Forms.Label welcomeLabel;
+        private System.Windows.Forms.Label rateLabel;
+        private System.Windows.Forms.Button showRatesButton;
+        private System.Windows.Forms.PictureBox logoPictureBox;
+        private System.Windows.Forms.Button reservationButton;
+        private System.Windows.Forms.Button amenitiesButton;
+        private System.Windows.Forms.Label loadingLabel;
+        private System.Windows.Forms.Label descriptionLabel;
+        private System.Windows.Forms.GroupBox infoGroupBox;
+
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            this.welcomeLabel = new System.Windows.Forms.Label();
+            this.rateLabel = new System.Windows.Forms.Label();
+            this.showRatesButton = new System.Windows.Forms.Button();
+            this.logoPictureBox = new System.Windows.Forms.PictureBox();
+            this.reservationButton = new System.Windows.Forms.Button();
+            this.amenitiesButton = new System.Windows.Forms.Button();
+            this.loadingLabel = new System.Windows.Forms.Label();
+            this.descriptionLabel = new System.Windows.Forms.Label();
+            this.infoGroupBox = new System.Windows.Forms.GroupBox();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
+            this.infoGroupBox.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // welcomeLabel
+            // 
+            this.welcomeLabel.AutoSize = true;
+            this.welcomeLabel.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.welcomeLabel.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.welcomeLabel.Location = new System.Drawing.Point(220, 20);
+            this.welcomeLabel.Name = "welcomeLabel";
+            this.welcomeLabel.Size = new System.Drawing.Size(360, 45);
+            this.welcomeLabel.TabIndex = 0;
+            this.welcomeLabel.Text = "Welcome to Bailey's";
+            // 
+            // rateLabel
+            // 
+            this.rateLabel.AutoSize = true;
+            this.rateLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.rateLabel.ForeColor = System.Drawing.Color.SlateGray;
+            this.rateLabel.Location = new System.Drawing.Point(280, 70);
+            this.rateLabel.Name = "rateLabel";
+            this.rateLabel.Size = new System.Drawing.Size(240, 25);
+            this.rateLabel.TabIndex = 1;
+            this.rateLabel.Text = "Your home away from home";
+            // 
+            // showRatesButton
+            // 
+            this.showRatesButton.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.showRatesButton.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.showRatesButton.Location = new System.Drawing.Point(30, 40);
+            this.showRatesButton.Name = "showRatesButton";
+            this.showRatesButton.Size = new System.Drawing.Size(180, 45);
+            this.showRatesButton.TabIndex = 2;
+            this.showRatesButton.Text = "View Room Rates";
+            this.showRatesButton.UseVisualStyleBackColor = false;
+            this.showRatesButton.Click += new System.EventHandler(this.showRatesButton_Click);
+            // 
+            // logoPictureBox
+            // 
+            this.logoPictureBox.BackColor = System.Drawing.Color.LightBlue;
+            this.logoPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.logoPictureBox.Location = new System.Drawing.Point(30, 20);
+            this.logoPictureBox.Name = "logoPictureBox";
+            this.logoPictureBox.Size = new System.Drawing.Size(150, 150);
+            this.logoPictureBox.TabIndex = 3;
+            this.logoPictureBox.TabStop = false;
+            // 
+            // reservationButton
+            // 
+            this.reservationButton.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.reservationButton.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.reservationButton.Location = new System.Drawing.Point(250, 40);
+            this.reservationButton.Name = "reservationButton";
+            this.reservationButton.Size = new System.Drawing.Size(180, 45);
+            this.reservationButton.TabIndex = 4;
+            this.reservationButton.Text = "Make Reservation";
+            this.reservationButton.UseVisualStyleBackColor = false;
+            this.reservationButton.Click += new System.EventHandler(this.reservationButton_Click);
+            // 
+            // amenitiesButton
+            // 
+            this.amenitiesButton.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.amenitiesButton.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.amenitiesButton.Location = new System.Drawing.Point(470, 40);
+            this.amenitiesButton.Name = "amenitiesButton";
+            this.amenitiesButton.Size = new System.Drawing.Size(180, 45);
+            this.amenitiesButton.TabIndex = 5;
+            this.amenitiesButton.Text = "Our Amenities";
+            this.amenitiesButton.UseVisualStyleBackColor = false;
+            this.amenitiesButton.Click += new System.EventHandler(this.amenitiesButton_Click);
+            // 
+            // loadingLabel
+            // 
+            this.loadingLabel.AutoSize = true;
+            this.loadingLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.loadingLabel.ForeColor = System.Drawing.Color.DarkOrange;
+            this.loadingLabel.Location = new System.Drawing.Point(280, 440);
+            this.loadingLabel.Name = "loadingLabel";
+            this.loadingLabel.Size = new System.Drawing.Size(120, 19);
+            this.loadingLabel.TabIndex = 6;
+            this.loadingLabel.Text = "Loading, please wait...";
+            // 
+            // descriptionLabel
+            // 
+            this.descriptionLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.descriptionLabel.ForeColor = System.Drawing.Color.DimGray;
+            this.descriptionLabel.Location = new System.Drawing.Point(30, 190);
+            this.descriptionLabel.Name = "descriptionLabel";
+            this.descriptionLabel.Size = new System.Drawing.Size(720, 80);
+            this.descriptionLabel.TabIndex = 7;
+            this.descriptionLabel.Text = "Experience the charm of our cozy bed and breakfast nestled in the heart of the countryside. We offer comfortable rooms, delicious homemade breakfasts, and warm hospitality. Whether you're here for a weekend getaway or an extended stay, we'll make you feel right at home.";
+            // 
+            // infoGroupBox
+            // 
+            this.infoGroupBox.BackColor = System.Drawing.Color.Lavender;
+            this.infoGroupBox.Controls.Add(this.showRatesButton);
+            this.infoGroupBox.Controls.Add(this.reservationButton);
+            this.infoGroupBox.Controls.Add(this.amenitiesButton);
+            this.infoGroupBox.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.infoGroupBox.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.infoGroupBox.Location = new System.Drawing.Point(30, 290);
+            this.infoGroupBox.Name = "infoGroupBox";
+            this.infoGroupBox.Size = new System.Drawing.Size(720, 120);
+            this.infoGroupBox.TabIndex = 8;
+            this.infoGroupBox.TabStop = false;
+            this.infoGroupBox.Text = "What would you like to do today?";
+            // 
+            // Form1
+            // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AliceBlue;
+            this.ClientSize = new System.Drawing.Size(800, 500);
+            this.Controls.Add(this.infoGroupBox);
+            this.Controls.Add(this.descriptionLabel);
+            this.Controls.Add(this.loadingLabel);
+            this.Controls.Add(this.logoPictureBox);
+            this.Controls.Add(this.rateLabel);
+            this.Controls.Add(this.welcomeLabel);
+            this.Name = "BaileysForm";
+            this.Text = "Bailey's Bed and Breakfast - Reservations";
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
+            this.infoGroupBox.ResumeLayout(false);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+        }
+
+        #endregion
+    }
+}
