@@ -1,10 +1,68 @@
+# Visual Studio files and folders
 .vs/
-/.vs/
-**/bin/
-**/obj/
-bin/
-obj/
-bin/
-obj/
-bin/
-obj/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio profiler
+*.psess
+*.vsp
+*.vspx
+*.sap
+
+# ReSharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# NuGet Packages
+*.nupkg
+**/packages/*
+*.nuget.props
+*.nuget.targets
+
+# Visual Studio cache files
+*.cache
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# GitHub Copilot
+.copilot/
+*.copilot
+copilot-*.json
+
+# Backup files
+*.backup
+*.bak
+*~
+
+# OS generated files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# User-specific files
+*.rsuser
+*.userprefs
+
+# Test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
