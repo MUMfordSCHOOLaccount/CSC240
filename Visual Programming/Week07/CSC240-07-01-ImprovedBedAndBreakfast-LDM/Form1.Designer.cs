@@ -165,9 +165,9 @@
             // 
             this.descriptionLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.descriptionLabel.ForeColor = System.Drawing.Color.DimGray;
-            this.descriptionLabel.Location = new System.Drawing.Point(30, 190);
+            this.descriptionLabel.Location = new System.Drawing.Point(30, 250);
             this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(720, 80);
+            this.descriptionLabel.Size = new System.Drawing.Size(720, 35);
             this.descriptionLabel.TabIndex = 7;
             this.descriptionLabel.Text = "Experience the charm of our cozy bed and breakfast nestled in the heart of the countryside. " +
                 "We offer comfortable rooms, delicious homemade breakfasts, and warm hospitality. " +
@@ -181,7 +181,7 @@
             this.infoGroupBox.Controls.Add(this.amenitiesButton);
             this.infoGroupBox.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.infoGroupBox.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.infoGroupBox.Location = new System.Drawing.Point(30, 290);
+            this.infoGroupBox.Location = new System.Drawing.Point(30, 320);
             this.infoGroupBox.Name = "infoGroupBox";
             this.infoGroupBox.Size = new System.Drawing.Size(720, 120);
             this.infoGroupBox.TabIndex = 8;
