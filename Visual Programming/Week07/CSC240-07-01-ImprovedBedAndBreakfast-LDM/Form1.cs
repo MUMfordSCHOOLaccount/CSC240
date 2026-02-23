@@ -50,41 +50,49 @@ namespace CSC240_07_01_ImprovedBedAndBreakfast_LDM
             }
         }
 
-        private void LocalAttractionsButton_Click(object sender, EventArgs e)
+        private void GuestBookButton_Click(object sender, EventArgs e)
         {
             reservationButton.Enabled = false;
             loadingLabel.Visible = true;
-            loadingLabel.Text = "Loading attractions...";
+            loadingLabel.Text = "Loading guest book...";
 
-            Thread attractionsThread = new Thread(ShowAttractions);
-            attractionsThread.Start();
+            Thread guestBookThread = new Thread(ShowGuestBook);
+            guestBookThread.Start();
         }
 
-        private void ShowAttractions()
+        private void ShowGuestBook()
         {
             Thread.Sleep(1500);
 
             this.Invoke(new Action(() =>
             {
-                string attractions = "DISCOVER THE AREA:\n\n" +
-                    "NEARBY ATTRACTIONS:\n" +
-                    "* Peaceful Valley Winery - 2 miles\n" +
-                    "  Award-winning wines and tastings daily\n\n" +
-                    "* Heritage Museum - 3 miles\n" +
-                    "  Explore local history from the 1850s\n\n" +
-                    "* Sunset Trail Hiking Path - 1 mile\n" +
-                    "  Beautiful 5-mile loop with valley views\n\n" +
-                    "* Country Lane Antique Market - 4 miles\n" +
-                    "  Vintage treasures every weekend\n\n" +
-                    "* Riverside Park & Gardens - 2.5 miles\n" +
-                    "  Perfect for picnics and photography\n\n" +
-                    "ABOUT BAILEY'S:\n" +
-                    "Built in 1852 by the Bailey family, our historic\n" +
-                    "home has welcomed travelers for generations.\n" +
-                    "Experience the charm of yesteryear with\n" +
-                    "modern comfort and hospitality!";
+                string guestBook = "BAILEY'S GUEST BOOK\n" +
+                    "?????????????????????????????????\n\n" +
+                    "????? \"A HIDDEN GEM!\"\n" +
+                    "\"The Belle Aire Suite was absolutely stunning!\n" +
+                    "The breakfast was divine, and our hosts made\n" +
+                    "us feel like family. Can't wait to return!\"\n" +
+                    "   - Sarah & Michael Chen, June 2024\n\n" +
+                    "????? \"ROMANTIC GETAWAY PERFECTION\"\n" +
+                    "\"The Lincoln Room transported us back in time.\n" +
+                    "Historic charm with modern comfort. The deluxe\n" +
+                    "breakfast was worth every penny!\"\n" +
+                    "   - Jennifer Martinez, May 2024\n\n" +
+                    "????? \"EXCEEDED ALL EXPECTATIONS\"\n" +
+                    "\"We've stayed at many B&Bs, but Bailey's\n" +
+                    "stands out. Impeccable cleanliness, gourmet\n" +
+                    "food, and the warmest hospitality.\"\n" +
+                    "   - Robert & Patricia Johnson, April 2024\n\n" +
+                    "????? \"OUR HAPPY PLACE!\"\n" +
+                    "\"This is our 4th visit and it never disappoints.\n" +
+                    "The countryside views are breathtaking, and\n" +
+                    "Bailey's feels like coming home.\"\n" +
+                    "   - David Kim, March 2024\n\n" +
+                    "?????????????????????????????????\n" +
+                    "Thank you to all our wonderful guests!\n" +
+                    "We look forward to welcoming you soon!";
 
-                MessageBox.Show(attractions, "Local Attractions & History", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(guestBook, "Guest Book - Recent Reviews", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 loadingLabel.Visible = false;
                 reservationButton.Enabled = true;
             }));

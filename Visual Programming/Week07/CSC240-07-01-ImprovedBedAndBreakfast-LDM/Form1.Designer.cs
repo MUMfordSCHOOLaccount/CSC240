@@ -134,9 +134,9 @@
             this.reservationButton.Name = "reservationButton";
             this.reservationButton.Size = new System.Drawing.Size(180, 45);
             this.reservationButton.TabIndex = 4;
-            this.reservationButton.Text = "Local Attractions";
+            this.reservationButton.Text = "Guest Book";
             this.reservationButton.UseVisualStyleBackColor = false;
-            this.reservationButton.Click += new System.EventHandler(this.LocalAttractionsButton_Click);
+            this.reservationButton.Click += new System.EventHandler(this.GuestBookButton_Click);
             // 
             // amenitiesButton
             // 
