@@ -6,6 +6,13 @@ namespace CSC240_07_01_ImprovedBedAndBreakfast_LDM
         private string[] imagePaths;
         private bool isRunning = true;
 
+        // Pricing state variables
+        private string selectedSuite = "";
+        private decimal suitePrice = 0;
+        private string selectedBreakfast = "";
+        private decimal breakfastPrice = 0;
+        private int numberOfNights = 1;
+
         public Form1()
         {
             InitializeComponent();
@@ -128,9 +135,25 @@ namespace CSC240_07_01_ImprovedBedAndBreakfast_LDM
         {
             if (belleAireCheckBox.Checked)
             {
+                // Uncheck the other room option
+                lincolnCheckBox.Checked = false;
+                
+                // Update room selection
+                selectedSuite = "Belle Aire Suite";
+                suitePrice = 199.99m;
+                
                 BelleAireForm belleAireForm = new BelleAireForm();
                 belleAireForm.ShowDialog();
-                belleAireCheckBox.Checked = false;
+                
+                // Update the pricing display
+                UpdatePricingDisplay();
+            }
+            else if (!lincolnCheckBox.Checked)
+            {
+                // If unchecking and no other room is selected, clear room selection
+                selectedSuite = "";
+                suitePrice = 0;
+                UpdatePricingDisplay();
             }
         }
 
@@ -138,16 +161,80 @@ namespace CSC240_07_01_ImprovedBedAndBreakfast_LDM
         {
             if (lincolnCheckBox.Checked)
             {
+                // Uncheck the other room option
+                belleAireCheckBox.Checked = false;
+                
+                // Update room selection
+                selectedSuite = "Lincoln Room";
+                suitePrice = 110.00m;
+                
                 LincolnForm lincolnForm = new LincolnForm();
                 lincolnForm.ShowDialog();
-                lincolnCheckBox.Checked = false;
+                
+                // Update the pricing display
+                UpdatePricingDisplay();
+            }
+            else if (!belleAireCheckBox.Checked)
+            {
+                // If unchecking and no other room is selected, clear room selection
+                selectedSuite = "";
+                suitePrice = 0;
+                UpdatePricingDisplay();
             }
         }
 
         private void MealButton_Click(object sender, EventArgs e)
         {
             BreakfastOptionForm breakfastForm = new BreakfastOptionForm();
-            breakfastForm.ShowDialog();
+            
+            if (breakfastForm.ShowDialog() == DialogResult.OK || true) // Always update even if just closed
+            {
+                selectedBreakfast = breakfastForm.SelectedBreakfastName;
+                breakfastPrice = breakfastForm.SelectedBreakfastPrice;
+                UpdatePricingDisplay();
+            }
+        }
+
+        private void NightsNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            numberOfNights = (int)nightsNumericUpDown.Value;
+            UpdatePricingDisplay();
+        }
+
+        private void UpdatePricingDisplay()
+        {
+            // Build the summary text
+            string summary = "Your Selections: ";
+            List<string> selections = new List<string>();
+            
+            if (!string.IsNullOrEmpty(selectedSuite))
+            {
+                selections.Add($"{selectedSuite} ({suitePrice:C}/night)");
+            }
+            
+            if (!string.IsNullOrEmpty(selectedBreakfast))
+            {
+                selections.Add($"{selectedBreakfast} ({breakfastPrice:C}/night)");
+            }
+            
+            if (selections.Count > 0)
+            {
+                summary += string.Join(" + ", selections);
+                summary += $" × {numberOfNights} night{(numberOfNights > 1 ? "s" : "")}";
+                summaryLabel.Text = summary;
+                
+                // Calculate and display total
+                decimal totalPerNight = suitePrice + breakfastPrice;
+                decimal grandTotal = totalPerNight * numberOfNights;
+                
+                totalPriceLabel.Text = $"?? TOTAL: {grandTotal:C} - LOCK IN THIS PRICE NOW! ??";
+                totalPriceLabel.Visible = true;
+            }
+            else
+            {
+                summaryLabel.Text = "Make your selections above to see your total";
+                totalPriceLabel.Visible = false;
+            }
         }
     }
 }

@@ -38,6 +38,10 @@
         private System.Windows.Forms.CheckBox belleAireCheckBox;
         private System.Windows.Forms.CheckBox lincolnCheckBox;
         private System.Windows.Forms.Button mealButton;
+        private System.Windows.Forms.NumericUpDown nightsNumericUpDown;
+        private System.Windows.Forms.Label nightsLabel;
+        private System.Windows.Forms.Label summaryLabel;
+        private System.Windows.Forms.Label totalPriceLabel;
 
         private void InitializeComponent()
         {
@@ -54,7 +58,12 @@
             this.belleAireCheckBox = new System.Windows.Forms.CheckBox();
             this.lincolnCheckBox = new System.Windows.Forms.CheckBox();
             this.mealButton = new System.Windows.Forms.Button();
+            this.nightsNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.nightsLabel = new System.Windows.Forms.Label();
+            this.summaryLabel = new System.Windows.Forms.Label();
+            this.totalPriceLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nightsNumericUpDown)).BeginInit();
             this.infoGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -204,11 +213,63 @@
             this.mealButton.UseVisualStyleBackColor = false;
             this.mealButton.Click += new System.EventHandler(this.MealButton_Click);
             // 
+            // nightsLabel
+            // 
+            this.nightsLabel.AutoSize = true;
+            this.nightsLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.nightsLabel.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.nightsLabel.Location = new System.Drawing.Point(220, 185);
+            this.nightsLabel.Name = "nightsLabel";
+            this.nightsLabel.Size = new System.Drawing.Size(120, 20);
+            this.nightsLabel.TabIndex = 12;
+            this.nightsLabel.Text = "Number of Nights:";
+            // 
+            // nightsNumericUpDown
+            // 
+            this.nightsNumericUpDown.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.nightsNumericUpDown.Location = new System.Drawing.Point(360, 183);
+            this.nightsNumericUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            this.nightsNumericUpDown.Maximum = new decimal(new int[] { 30, 0, 0, 0 });
+            this.nightsNumericUpDown.Name = "nightsNumericUpDown";
+            this.nightsNumericUpDown.Size = new System.Drawing.Size(80, 27);
+            this.nightsNumericUpDown.TabIndex = 13;
+            this.nightsNumericUpDown.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            this.nightsNumericUpDown.ValueChanged += new System.EventHandler(this.NightsNumericUpDown_ValueChanged);
+            // 
+            // summaryLabel
+            // 
+            this.summaryLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.summaryLabel.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.summaryLabel.Location = new System.Drawing.Point(30, 420);
+            this.summaryLabel.Name = "summaryLabel";
+            this.summaryLabel.Size = new System.Drawing.Size(720, 40);
+            this.summaryLabel.TabIndex = 14;
+            this.summaryLabel.Text = "Make your selections above to see your total";
+            this.summaryLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // totalPriceLabel
+            // 
+            this.totalPriceLabel.BackColor = System.Drawing.Color.Gold;
+            this.totalPriceLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.totalPriceLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.totalPriceLabel.ForeColor = System.Drawing.Color.DarkRed;
+            this.totalPriceLabel.Location = new System.Drawing.Point(30, 460);
+            this.totalPriceLabel.Name = "totalPriceLabel";
+            this.totalPriceLabel.Size = new System.Drawing.Size(720, 60);
+            this.totalPriceLabel.TabIndex = 15;
+            this.totalPriceLabel.Text = "🌟 LOCK IN YOUR PRICE - MAKE YOUR RESERVATION NOW! 🌟";
+            this.totalPriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.totalPriceLabel.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(800, 500);
+            this.ClientSize = new System.Drawing.Size(800, 540);
+            this.Controls.Add(this.totalPriceLabel);
+            this.Controls.Add(this.summaryLabel);
+            this.Controls.Add(this.nightsNumericUpDown);
+            this.Controls.Add(this.nightsLabel);
             this.Controls.Add(this.mealButton);
             this.Controls.Add(this.lincolnCheckBox);
             this.Controls.Add(this.belleAireCheckBox);
@@ -221,6 +282,7 @@
             this.Name = "BaileysForm";
             this.Text = "Bailey's Bed and Breakfast - Reservations";
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nightsNumericUpDown)).EndInit();
             this.infoGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
