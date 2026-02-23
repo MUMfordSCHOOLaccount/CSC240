@@ -218,9 +218,9 @@
             this.nightsLabel.AutoSize = true;
             this.nightsLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.nightsLabel.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.nightsLabel.Location = new System.Drawing.Point(220, 185);
+            this.nightsLabel.Location = new System.Drawing.Point(200, 185);
             this.nightsLabel.Name = "nightsLabel";
-            this.nightsLabel.Size = new System.Drawing.Size(120, 20);
+            this.nightsLabel.Size = new System.Drawing.Size(160, 20);
             this.nightsLabel.TabIndex = 12;
             this.nightsLabel.Text = "Number of Nights:";
             // 

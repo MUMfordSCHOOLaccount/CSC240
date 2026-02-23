@@ -72,6 +72,7 @@ namespace CSC240_07_01_ImprovedBedAndBreakfast_LDM
                 decimal totalPerNight = suitePrice + breakfastPrice;
                 decimal grandTotal = totalPerNight * numberOfNights;
                 
+                // Dynamic message based on selections
                 string message = grandTotal > 0 
                     ? $"Reserve your trip for {grandTotal:C}!\n\nPlease call us at:\n(555) 123-4567\n\nOr email:\nbaileys@bedandbreakfast.com"
                     : "We have rooms available!\n\nPlease call us at:\n(555) 123-4567\n\nOr email:\nbaileys@bedandbreakfast.com";
@@ -244,3 +245,4 @@ namespace CSC240_07_01_ImprovedBedAndBreakfast_LDM
         }
     }
 }
+
