@@ -19,6 +19,7 @@ namespace CSC240_07_01_ImprovedBedAndBreakfast_LDM
         private void BreakfastOptionForm_Load(object sender, EventArgs e)
         {
             priceLabel.Text = "Price: " + CONT_BREAKFAST_PRICE.ToString("C");
+            UpdateSelectionLabel();
         }
 
         private void ContRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -28,6 +29,7 @@ namespace CSC240_07_01_ImprovedBedAndBreakfast_LDM
                 priceLabel.Text = "Price: " + CONT_BREAKFAST_PRICE.ToString("C");
                 SelectedBreakfastPrice = (decimal)CONT_BREAKFAST_PRICE;
                 SelectedBreakfastName = "Continental Breakfast";
+                UpdateSelectionLabel();
             }
         }
 
@@ -38,6 +40,7 @@ namespace CSC240_07_01_ImprovedBedAndBreakfast_LDM
                 priceLabel.Text = "Price: " + FULL_BREAKFAST_PRICE.ToString("C");
                 SelectedBreakfastPrice = (decimal)FULL_BREAKFAST_PRICE;
                 SelectedBreakfastName = "Full Breakfast";
+                UpdateSelectionLabel();
             }
         }
 
@@ -48,7 +51,19 @@ namespace CSC240_07_01_ImprovedBedAndBreakfast_LDM
                 priceLabel.Text = "Price: " + DELUXE_BREAKFAST_PRICE.ToString("C");
                 SelectedBreakfastPrice = (decimal)DELUXE_BREAKFAST_PRICE;
                 SelectedBreakfastName = "Deluxe Breakfast";
+                UpdateSelectionLabel();
             }
+        }
+
+        private void UpdateSelectionLabel()
+        {
+            selectionLabel.Text = $"Current: {SelectedBreakfastName} - {SelectedBreakfastPrice:C}";
+        }
+
+        private void OkButton_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }

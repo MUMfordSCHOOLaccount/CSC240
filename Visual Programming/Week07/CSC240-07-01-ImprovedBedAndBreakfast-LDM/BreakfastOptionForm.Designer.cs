@@ -31,6 +31,8 @@ namespace CSC240_07_01_ImprovedBedAndBreakfast_LDM
         private System.Windows.Forms.RadioButton fullRadioButton;
         private System.Windows.Forms.RadioButton deluxeRadioButton;
         private System.Windows.Forms.Label priceLabel;
+        private System.Windows.Forms.Button okButton;
+        private System.Windows.Forms.Label selectionLabel;
 
         private void InitializeComponent()
         {
@@ -39,6 +41,8 @@ namespace CSC240_07_01_ImprovedBedAndBreakfast_LDM
             this.fullRadioButton = new System.Windows.Forms.RadioButton();
             this.deluxeRadioButton = new System.Windows.Forms.RadioButton();
             this.priceLabel = new System.Windows.Forms.Label();
+            this.okButton = new System.Windows.Forms.Button();
+            this.selectionLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // breakfastLabel
@@ -95,12 +99,37 @@ namespace CSC240_07_01_ImprovedBedAndBreakfast_LDM
             this.priceLabel.TabIndex = 4;
             this.priceLabel.Text = "Price:";
             // 
+            // selectionLabel
+            // 
+            this.selectionLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.selectionLabel.ForeColor = System.Drawing.Color.DarkGreen;
+            this.selectionLabel.Location = new System.Drawing.Point(30, 195);
+            this.selectionLabel.Name = "selectionLabel";
+            this.selectionLabel.Size = new System.Drawing.Size(290, 25);
+            this.selectionLabel.TabIndex = 5;
+            this.selectionLabel.Text = "Current: Continental Breakfast - $6.00";
+            this.selectionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // okButton
+            // 
+            this.okButton.BackColor = System.Drawing.Color.LightGreen;
+            this.okButton.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.okButton.Location = new System.Drawing.Point(110, 230);
+            this.okButton.Name = "okButton";
+            this.okButton.Size = new System.Drawing.Size(130, 40);
+            this.okButton.TabIndex = 6;
+            this.okButton.Text = "Confirm";
+            this.okButton.UseVisualStyleBackColor = false;
+            this.okButton.Click += new System.EventHandler(this.OkButton_Click);
+            // 
             // BreakfastOptionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Yellow;
-            this.ClientSize = new System.Drawing.Size(350, 220);
+            this.ClientSize = new System.Drawing.Size(350, 290);
+            this.Controls.Add(this.okButton);
+            this.Controls.Add(this.selectionLabel);
             this.Controls.Add(this.priceLabel);
             this.Controls.Add(this.deluxeRadioButton);
             this.Controls.Add(this.fullRadioButton);

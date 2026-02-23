@@ -257,7 +257,7 @@
             this.totalPriceLabel.Name = "totalPriceLabel";
             this.totalPriceLabel.Size = new System.Drawing.Size(720, 60);
             this.totalPriceLabel.TabIndex = 15;
-            this.totalPriceLabel.Text = "🌟 LOCK IN YOUR PRICE - MAKE YOUR RESERVATION NOW! 🌟";
+            this.totalPriceLabel.Text = "$$ LOCK IN YOUR PRICE - MAKE YOUR RESERVATION NOW! $$";
             this.totalPriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.totalPriceLabel.Visible = false;
             // 

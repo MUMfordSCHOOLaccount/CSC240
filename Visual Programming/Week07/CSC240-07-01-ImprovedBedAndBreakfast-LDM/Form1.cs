@@ -69,8 +69,14 @@ namespace CSC240_07_01_ImprovedBedAndBreakfast_LDM
 
             this.Invoke(new Action(() =>
             {
-                MessageBox.Show("We have rooms available!\n\nPlease call us at:\n(555) 123-4567\n\nOr email:\nbaileys@bedandbreakfast.com", 
-                    "Reservations", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                decimal totalPerNight = suitePrice + breakfastPrice;
+                decimal grandTotal = totalPerNight * numberOfNights;
+                
+                string message = grandTotal > 0 
+                    ? $"Reserve your trip for {grandTotal:C}!\n\nPlease call us at:\n(555) 123-4567\n\nOr email:\nbaileys@bedandbreakfast.com"
+                    : "We have rooms available!\n\nPlease call us at:\n(555) 123-4567\n\nOr email:\nbaileys@bedandbreakfast.com";
+                
+                MessageBox.Show(message, "Reservations", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 loadingLabel.Visible = false;
                 reservationButton.Enabled = true;
             }));
@@ -227,7 +233,7 @@ namespace CSC240_07_01_ImprovedBedAndBreakfast_LDM
                 decimal totalPerNight = suitePrice + breakfastPrice;
                 decimal grandTotal = totalPerNight * numberOfNights;
                 
-                totalPriceLabel.Text = $"?? TOTAL: {grandTotal:C} - LOCK IN THIS PRICE NOW! ??";
+                totalPriceLabel.Text = $"$$ TOTAL: {grandTotal:C} - LOCK IN THIS PRICE NOW! $$";
                 totalPriceLabel.Visible = true;
             }
             else
