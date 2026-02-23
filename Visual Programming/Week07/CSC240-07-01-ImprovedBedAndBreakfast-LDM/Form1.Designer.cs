@@ -134,9 +134,9 @@
             this.reservationButton.Name = "reservationButton";
             this.reservationButton.Size = new System.Drawing.Size(180, 45);
             this.reservationButton.TabIndex = 4;
-            this.reservationButton.Text = "Make Reservation";
+            this.reservationButton.Text = "Local Attractions";
             this.reservationButton.UseVisualStyleBackColor = false;
-            this.reservationButton.Click += new System.EventHandler(this.reservationButton_Click);
+            this.reservationButton.Click += new System.EventHandler(this.LocalAttractionsButton_Click);
             // 
             // amenitiesButton
             // 
@@ -192,7 +192,7 @@
             // 
             this.roomGroupBox.Controls.Add(this.belleAireRadioButton);
             this.roomGroupBox.Controls.Add(this.lincolnRadioButton);
-            this.roomGroupBox.Location = new System.Drawing.Point(220, 105);
+            this.roomGroupBox.Location = new System.Drawing.Point(220, 128);
             this.roomGroupBox.Name = "roomGroupBox";
             this.roomGroupBox.Size = new System.Drawing.Size(230, 85);
             this.roomGroupBox.TabIndex = 18;
@@ -203,9 +203,10 @@
             this.roomSelectionLabel.AutoSize = true;
             this.roomSelectionLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.roomSelectionLabel.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.roomSelectionLabel.Location = new System.Drawing.Point(220, 107);
+            this.roomSelectionLabel.BackColor = System.Drawing.Color.AliceBlue;
+            this.roomSelectionLabel.Location = new System.Drawing.Point(220, 105);
             this.roomSelectionLabel.Name = "roomSelectionLabel";
-            this.roomSelectionLabel.Size = new System.Drawing.Size(150, 20);
+            this.roomSelectionLabel.Size = new System.Drawing.Size(160, 22);
             this.roomSelectionLabel.TabIndex = 9;
             this.roomSelectionLabel.Text = "SELECT YOUR ROOM:";
             // 
@@ -242,7 +243,7 @@
             this.mealGroupBox.Controls.Add(this.continentalRadioButton);
             this.mealGroupBox.Controls.Add(this.fullRadioButton);
             this.mealGroupBox.Controls.Add(this.deluxeRadioButton);
-            this.mealGroupBox.Location = new System.Drawing.Point(470, 105);
+            this.mealGroupBox.Location = new System.Drawing.Point(470, 128);
             this.mealGroupBox.Name = "mealGroupBox";
             this.mealGroupBox.Size = new System.Drawing.Size(200, 105);
             this.mealGroupBox.TabIndex = 19;
@@ -253,9 +254,10 @@
             this.mealSelectionLabel.AutoSize = true;
             this.mealSelectionLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.mealSelectionLabel.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.mealSelectionLabel.Location = new System.Drawing.Point(470, 107);
+            this.mealSelectionLabel.BackColor = System.Drawing.Color.AliceBlue;
+            this.mealSelectionLabel.Location = new System.Drawing.Point(470, 105);
             this.mealSelectionLabel.Name = "mealSelectionLabel";
-            this.mealSelectionLabel.Size = new System.Drawing.Size(190, 20);
+            this.mealSelectionLabel.Size = new System.Drawing.Size(200, 22);
             this.mealSelectionLabel.TabIndex = 13;
             this.mealSelectionLabel.Text = "SELECT YOUR BREAKFAST:";
             // 
@@ -361,10 +363,10 @@
             this.Controls.Add(this.summaryLabel);
             this.Controls.Add(this.nightsNumericUpDown);
             this.Controls.Add(this.nightsLabel);
-            this.Controls.Add(this.mealSelectionLabel);
             this.Controls.Add(this.mealGroupBox);
-            this.Controls.Add(this.roomSelectionLabel);
             this.Controls.Add(this.roomGroupBox);
+            this.Controls.Add(this.mealSelectionLabel);
+            this.Controls.Add(this.roomSelectionLabel);
             this.Controls.Add(this.infoGroupBox);
             this.Controls.Add(this.descriptionLabel);
             this.Controls.Add(this.loadingLabel);

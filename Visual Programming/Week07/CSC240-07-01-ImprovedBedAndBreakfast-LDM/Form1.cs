@@ -50,31 +50,41 @@ namespace CSC240_07_01_ImprovedBedAndBreakfast_LDM
             }
         }
 
-        private void reservationButton_Click(object sender, EventArgs e)
+        private void LocalAttractionsButton_Click(object sender, EventArgs e)
         {
             reservationButton.Enabled = false;
             loadingLabel.Visible = true;
-            loadingLabel.Text = "Checking availability...";
+            loadingLabel.Text = "Loading attractions...";
 
-            Thread reservationThread = new Thread(CheckAvailability);
-            reservationThread.Start();
+            Thread attractionsThread = new Thread(ShowAttractions);
+            attractionsThread.Start();
         }
 
-        private void CheckAvailability()
+        private void ShowAttractions()
         {
-            Thread.Sleep(2000);
+            Thread.Sleep(1500);
 
             this.Invoke(new Action(() =>
             {
-                decimal totalPerNight = suitePrice + breakfastPrice;
-                decimal grandTotal = totalPerNight * numberOfNights;
-                
-                // Dynamic message based on selections
-                string message = grandTotal > 0 
-                    ? $"Reserve your trip for {grandTotal:C}!\n\nPlease call us at:\n(555) 123-4567\n\nOr email:\nbaileys@bedandbreakfast.com"
-                    : "We have rooms available!\n\nPlease call us at:\n(555) 123-4567\n\nOr email:\nbaileys@bedandbreakfast.com";
-                
-                MessageBox.Show(message, "Reservations", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string attractions = "DISCOVER THE AREA:\n\n" +
+                    "NEARBY ATTRACTIONS:\n" +
+                    "* Peaceful Valley Winery - 2 miles\n" +
+                    "  Award-winning wines and tastings daily\n\n" +
+                    "* Heritage Museum - 3 miles\n" +
+                    "  Explore local history from the 1850s\n\n" +
+                    "* Sunset Trail Hiking Path - 1 mile\n" +
+                    "  Beautiful 5-mile loop with valley views\n\n" +
+                    "* Country Lane Antique Market - 4 miles\n" +
+                    "  Vintage treasures every weekend\n\n" +
+                    "* Riverside Park & Gardens - 2.5 miles\n" +
+                    "  Perfect for picnics and photography\n\n" +
+                    "ABOUT BAILEY'S:\n" +
+                    "Built in 1852 by the Bailey family, our historic\n" +
+                    "home has welcomed travelers for generations.\n" +
+                    "Experience the charm of yesteryear with\n" +
+                    "modern comfort and hospitality!";
+
+                MessageBox.Show(attractions, "Local Attractions & History", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 loadingLabel.Visible = false;
                 reservationButton.Enabled = true;
             }));
@@ -210,9 +220,9 @@ namespace CSC240_07_01_ImprovedBedAndBreakfast_LDM
             decimal grandTotal = totalPerNight * numberOfNights;
 
             string message = $"Reserve your trip for {grandTotal:C}!\n\n" +
-                "?? PHONE: (555) 123-4567\n" +
-                "?? EMAIL: baileys@bedandbreakfast.com\n" +
-                "?? ADDRESS:\n" +
+                "* PHONE: (555) 123-4567\n" +
+                "* EMAIL: baileys@bedandbreakfast.com\n" +
+                "* ADDRESS:\n" +
                 "   Bailey's Bed & Breakfast\n" +
                 "   123 Country Lane\n" +
                 "   Peaceful Valley, ST 12345\n\n" +
