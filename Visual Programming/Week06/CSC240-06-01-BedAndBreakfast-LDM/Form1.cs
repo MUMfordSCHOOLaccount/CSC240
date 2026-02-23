@@ -7,10 +7,30 @@ namespace CSC240_06_01_BedAndBreakfast_LDM
             InitializeComponent();
         }
 
-        private void showRatesButton_Click(object sender, EventArgs e)
+        private void BelleAireCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            string message = "Standard Room: $75 per night\nDeluxe Room: $120 per night\nSuite: $200 per night";
-            MessageBox.Show(message, "Room Rates", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (belleAireCheckBox.Checked)
+            {
+                BelleAireForm belleAireForm = new BelleAireForm();
+                belleAireForm.ShowDialog();
+                belleAireCheckBox.Checked = false;
+            }
+        }
+
+        private void LincolnCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lincolnCheckBox.Checked)
+            {
+                LincolnForm lincolnForm = new LincolnForm();
+                lincolnForm.ShowDialog();
+                lincolnCheckBox.Checked = false;
+            }
+        }
+
+        private void MealButton_Click(object sender, EventArgs e)
+        {
+            BreakfastOptionForm breakfastForm = new BreakfastOptionForm();
+            breakfastForm.ShowDialog();
         }
     }
 }
