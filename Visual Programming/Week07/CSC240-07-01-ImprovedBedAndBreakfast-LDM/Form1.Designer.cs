@@ -35,6 +35,9 @@
         private System.Windows.Forms.Label loadingLabel;
         private System.Windows.Forms.Label descriptionLabel;
         private System.Windows.Forms.GroupBox infoGroupBox;
+        private System.Windows.Forms.CheckBox belleAireCheckBox;
+        private System.Windows.Forms.CheckBox lincolnCheckBox;
+        private System.Windows.Forms.Button mealButton;
 
         private void InitializeComponent()
         {
@@ -48,6 +51,9 @@
             this.loadingLabel = new System.Windows.Forms.Label();
             this.descriptionLabel = new System.Windows.Forms.Label();
             this.infoGroupBox = new System.Windows.Forms.GroupBox();
+            this.belleAireCheckBox = new System.Windows.Forms.CheckBox();
+            this.lincolnCheckBox = new System.Windows.Forms.CheckBox();
+            this.mealButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.infoGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -159,11 +165,53 @@
             this.infoGroupBox.TabStop = false;
             this.infoGroupBox.Text = "What would you like to do today?";
             // 
+            // belleAireCheckBox
+            // 
+            this.belleAireCheckBox.AutoSize = true;
+            this.belleAireCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.belleAireCheckBox.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.belleAireCheckBox.Location = new System.Drawing.Point(220, 110);
+            this.belleAireCheckBox.Name = "belleAireCheckBox";
+            this.belleAireCheckBox.Size = new System.Drawing.Size(180, 28);
+            this.belleAireCheckBox.TabIndex = 9;
+            this.belleAireCheckBox.Text = "Belle Aire Suite";
+            this.belleAireCheckBox.UseVisualStyleBackColor = true;
+            this.belleAireCheckBox.CheckedChanged += new System.EventHandler(this.BelleAireCheckBox_CheckedChanged);
+            // 
+            // lincolnCheckBox
+            // 
+            this.lincolnCheckBox.AutoSize = true;
+            this.lincolnCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lincolnCheckBox.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.lincolnCheckBox.Location = new System.Drawing.Point(220, 145);
+            this.lincolnCheckBox.Name = "lincolnCheckBox";
+            this.lincolnCheckBox.Size = new System.Drawing.Size(165, 28);
+            this.lincolnCheckBox.TabIndex = 10;
+            this.lincolnCheckBox.Text = "Lincoln Room";
+            this.lincolnCheckBox.UseVisualStyleBackColor = true;
+            this.lincolnCheckBox.CheckedChanged += new System.EventHandler(this.LincolnCheckBox_CheckedChanged);
+            // 
+            // mealButton
+            // 
+            this.mealButton.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.mealButton.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.mealButton.ForeColor = System.Drawing.Color.Black;
+            this.mealButton.Location = new System.Drawing.Point(470, 110);
+            this.mealButton.Name = "mealButton";
+            this.mealButton.Size = new System.Drawing.Size(200, 45);
+            this.mealButton.TabIndex = 11;
+            this.mealButton.Text = "Click for meal options";
+            this.mealButton.UseVisualStyleBackColor = false;
+            this.mealButton.Click += new System.EventHandler(this.MealButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(800, 500);
+            this.Controls.Add(this.mealButton);
+            this.Controls.Add(this.lincolnCheckBox);
+            this.Controls.Add(this.belleAireCheckBox);
             this.Controls.Add(this.infoGroupBox);
             this.Controls.Add(this.descriptionLabel);
             this.Controls.Add(this.loadingLabel);
