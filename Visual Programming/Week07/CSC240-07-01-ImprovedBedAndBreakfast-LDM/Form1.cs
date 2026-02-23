@@ -67,28 +67,28 @@ namespace CSC240_07_01_ImprovedBedAndBreakfast_LDM
             this.Invoke(new Action(() =>
             {
                 string guestBook = "BAILEY'S GUEST BOOK\n" +
-                    "?????????????????????????????????\n\n" +
-                    "????? \"A HIDDEN GEM!\"\n" +
+                    "*****************************************\n\n" +
+                    "* * * \"A HIDDEN GEM!\"\n" +
                     "\"The Belle Aire Suite was absolutely stunning!\n" +
                     "The breakfast was divine, and our hosts made\n" +
                     "us feel like family. Can't wait to return!\"\n" +
                     "   - Sarah & Michael Chen, June 2024\n\n" +
-                    "????? \"ROMANTIC GETAWAY PERFECTION\"\n" +
+                    "* * * \"ROMANTIC GETAWAY PERFECTION\"\n" +
                     "\"The Lincoln Room transported us back in time.\n" +
                     "Historic charm with modern comfort. The deluxe\n" +
                     "breakfast was worth every penny!\"\n" +
                     "   - Jennifer Martinez, May 2024\n\n" +
-                    "????? \"EXCEEDED ALL EXPECTATIONS\"\n" +
+                    "* * * \"EXCEEDED ALL EXPECTATIONS\"\n" +
                     "\"We've stayed at many B&Bs, but Bailey's\n" +
                     "stands out. Impeccable cleanliness, gourmet\n" +
                     "food, and the warmest hospitality.\"\n" +
                     "   - Robert & Patricia Johnson, April 2024\n\n" +
-                    "????? \"OUR HAPPY PLACE!\"\n" +
+                    "* * * \"OUR HAPPY PLACE!\"\n" +
                     "\"This is our 4th visit and it never disappoints.\n" +
                     "The countryside views are breathtaking, and\n" +
                     "Bailey's feels like coming home.\"\n" +
                     "   - David Kim, March 2024\n\n" +
-                    "?????????????????????????????????\n" +
+                    "*****************************************\n" +
                     "Thank you to all our wonderful guests!\n" +
                     "We look forward to welcoming you soon!";
 

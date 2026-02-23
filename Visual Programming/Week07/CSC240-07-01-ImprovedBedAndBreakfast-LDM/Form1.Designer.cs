@@ -243,7 +243,7 @@
             this.mealGroupBox.Controls.Add(this.continentalRadioButton);
             this.mealGroupBox.Controls.Add(this.fullRadioButton);
             this.mealGroupBox.Controls.Add(this.deluxeRadioButton);
-            this.mealGroupBox.Location = new System.Drawing.Point(470, 128);
+            this.mealGroupBox.Location = new System.Drawing.Point(485, 128);
             this.mealGroupBox.Name = "mealGroupBox";
             this.mealGroupBox.Size = new System.Drawing.Size(200, 105);
             this.mealGroupBox.TabIndex = 19;
@@ -255,7 +255,7 @@
             this.mealSelectionLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.mealSelectionLabel.ForeColor = System.Drawing.Color.DarkSlateBlue;
             this.mealSelectionLabel.BackColor = System.Drawing.Color.AliceBlue;
-            this.mealSelectionLabel.Location = new System.Drawing.Point(470, 105);
+            this.mealSelectionLabel.Location = new System.Drawing.Point(485, 105);
             this.mealSelectionLabel.Name = "mealSelectionLabel";
             this.mealSelectionLabel.Size = new System.Drawing.Size(200, 22);
             this.mealSelectionLabel.TabIndex = 13;
@@ -318,7 +318,7 @@
             // nightsNumericUpDown
             // 
             this.nightsNumericUpDown.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nightsNumericUpDown.Location = new System.Drawing.Point(380, 213);
+            this.nightsNumericUpDown.Location = new System.Drawing.Point(395, 213);
             this.nightsNumericUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             this.nightsNumericUpDown.Maximum = new decimal(new int[] { 30, 0, 0, 0 });
             this.nightsNumericUpDown.Name = "nightsNumericUpDown";
@@ -344,9 +344,9 @@
             this.totalPriceLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.totalPriceLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.totalPriceLabel.ForeColor = System.Drawing.Color.DarkRed;
-            this.totalPriceLabel.Location = new System.Drawing.Point(30, 460);
+            this.totalPriceLabel.Location = new System.Drawing.Point(30, 452);
             this.totalPriceLabel.Name = "totalPriceLabel";
-            this.totalPriceLabel.Size = new System.Drawing.Size(720, 60);
+            this.totalPriceLabel.Size = new System.Drawing.Size(720, 72);
             this.totalPriceLabel.TabIndex = 15;
             this.totalPriceLabel.Text = "MAKE YOUR RESERVATION NOW!\n$$ LOCK IN YOUR PRICE - CLICK HERE! $$";
             this.totalPriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
