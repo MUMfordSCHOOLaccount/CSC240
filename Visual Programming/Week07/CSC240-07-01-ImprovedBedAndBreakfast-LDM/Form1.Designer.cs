@@ -40,8 +40,6 @@
         private System.Windows.Forms.RadioButton continentalRadioButton;
         private System.Windows.Forms.RadioButton fullRadioButton;
         private System.Windows.Forms.RadioButton deluxeRadioButton;
-        private System.Windows.Forms.Button roomInfoButton;
-        private System.Windows.Forms.Button mealInfoButton;
         private System.Windows.Forms.Label roomSelectionLabel;
         private System.Windows.Forms.Label mealSelectionLabel;
         private System.Windows.Forms.GroupBox roomGroupBox;
@@ -68,8 +66,6 @@
             this.continentalRadioButton = new System.Windows.Forms.RadioButton();
             this.fullRadioButton = new System.Windows.Forms.RadioButton();
             this.deluxeRadioButton = new System.Windows.Forms.RadioButton();
-            this.roomInfoButton = new System.Windows.Forms.Button();
-            this.mealInfoButton = new System.Windows.Forms.Button();
             this.roomSelectionLabel = new System.Windows.Forms.Label();
             this.mealSelectionLabel = new System.Windows.Forms.Label();
             this.roomGroupBox = new System.Windows.Forms.GroupBox();
@@ -115,9 +111,9 @@
             this.showRatesButton.Name = "showRatesButton";
             this.showRatesButton.Size = new System.Drawing.Size(180, 45);
             this.showRatesButton.TabIndex = 2;
-            this.showRatesButton.Text = "View Room Rates";
+            this.showRatesButton.Text = "Room Information";
             this.showRatesButton.UseVisualStyleBackColor = false;
-            this.showRatesButton.Click += new System.EventHandler(this.showRatesButton_Click);
+            this.showRatesButton.Click += new System.EventHandler(this.RoomInfoButton_Click);
             // 
             // logoPictureBox
             // 
@@ -150,9 +146,9 @@
             this.amenitiesButton.Name = "amenitiesButton";
             this.amenitiesButton.Size = new System.Drawing.Size(180, 45);
             this.amenitiesButton.TabIndex = 5;
-            this.amenitiesButton.Text = "Our Amenities";
+            this.amenitiesButton.Text = "Breakfast Information";
             this.amenitiesButton.UseVisualStyleBackColor = false;
-            this.amenitiesButton.Click += new System.EventHandler(this.amenitiesButton_Click);
+            this.amenitiesButton.Click += new System.EventHandler(this.MealInfoButton_Click);
             // 
             // loadingLabel
             // 
@@ -223,7 +219,7 @@
             this.belleAireRadioButton.Size = new System.Drawing.Size(210, 23);
             this.belleAireRadioButton.TabIndex = 10;
             this.belleAireRadioButton.TabStop = true;
-            this.belleAireRadioButton.Text = "Belle Aire Suite - $199.99/night";
+            this.belleAireRadioButton.Text = "$$$ Belle Aire Suite - $199.99/night";
             this.belleAireRadioButton.UseVisualStyleBackColor = true;
             this.belleAireRadioButton.CheckedChanged += new System.EventHandler(this.BelleAireRadioButton_CheckedChanged);
             // 
@@ -237,23 +233,11 @@
             this.lincolnRadioButton.Size = new System.Drawing.Size(190, 23);
             this.lincolnRadioButton.TabIndex = 11;
             this.lincolnRadioButton.TabStop = true;
-            this.lincolnRadioButton.Text = "Lincoln Room - $110/night";
+            this.lincolnRadioButton.Text = "$$ Lincoln Room - $110/night";
             this.lincolnRadioButton.UseVisualStyleBackColor = true;
             this.lincolnRadioButton.CheckedChanged += new System.EventHandler(this.LincolnRadioButton_CheckedChanged);
             // 
-            // roomInfoButton
-            // 
-            this.roomInfoButton.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.roomInfoButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.roomInfoButton.Location = new System.Drawing.Point(370, 105);
-            this.roomInfoButton.Name = "roomInfoButton";
-            this.roomInfoButton.Size = new System.Drawing.Size(70, 25);
-            this.roomInfoButton.TabIndex = 12;
-            this.roomInfoButton.Text = "Info";
-            this.roomInfoButton.UseVisualStyleBackColor = false;
-            this.roomInfoButton.Click += new System.EventHandler(this.RoomInfoButton_Click);
-            // 
-            // mealGroupBox
+            // showRatesButton
             // 
             this.mealGroupBox.Controls.Add(this.continentalRadioButton);
             this.mealGroupBox.Controls.Add(this.fullRadioButton);
@@ -286,7 +270,7 @@
             this.continentalRadioButton.Size = new System.Drawing.Size(150, 23);
             this.continentalRadioButton.TabIndex = 14;
             this.continentalRadioButton.TabStop = true;
-            this.continentalRadioButton.Text = "Continental - $6.00";
+            this.continentalRadioButton.Text = "$ Continental - $6.00";
             this.continentalRadioButton.UseVisualStyleBackColor = true;
             this.continentalRadioButton.CheckedChanged += new System.EventHandler(this.ContinentalRadioButton_CheckedChanged);
             // 
@@ -300,7 +284,7 @@
             this.fullRadioButton.Size = new System.Drawing.Size(105, 23);
             this.fullRadioButton.TabIndex = 15;
             this.fullRadioButton.TabStop = true;
-            this.fullRadioButton.Text = "Full - $9.95";
+            this.fullRadioButton.Text = "$$ Full - $9.95";
             this.fullRadioButton.UseVisualStyleBackColor = true;
             this.fullRadioButton.CheckedChanged += new System.EventHandler(this.FullRadioButton_CheckedChanged);
             // 
@@ -314,21 +298,9 @@
             this.deluxeRadioButton.Size = new System.Drawing.Size(130, 23);
             this.deluxeRadioButton.TabIndex = 16;
             this.deluxeRadioButton.TabStop = true;
-            this.deluxeRadioButton.Text = "Deluxe - $16.50";
+            this.deluxeRadioButton.Text = "$$$ Deluxe - $16.50";
             this.deluxeRadioButton.UseVisualStyleBackColor = true;
             this.deluxeRadioButton.CheckedChanged += new System.EventHandler(this.DeluxeRadioButton_CheckedChanged);
-            // 
-            // mealInfoButton
-            // 
-            this.mealInfoButton.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.mealInfoButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.mealInfoButton.Location = new System.Drawing.Point(665, 105);
-            this.mealInfoButton.Name = "mealInfoButton";
-            this.mealInfoButton.Size = new System.Drawing.Size(70, 25);
-            this.mealInfoButton.TabIndex = 17;
-            this.mealInfoButton.Text = "Info";
-            this.mealInfoButton.UseVisualStyleBackColor = false;
-            this.mealInfoButton.Click += new System.EventHandler(this.MealInfoButton_Click);
             // 
             // nightsLabel
             // 
@@ -374,9 +346,11 @@
             this.totalPriceLabel.Name = "totalPriceLabel";
             this.totalPriceLabel.Size = new System.Drawing.Size(720, 60);
             this.totalPriceLabel.TabIndex = 15;
-            this.totalPriceLabel.Text = "$$ LOCK IN YOUR PRICE - MAKE YOUR RESERVATION NOW! $$";
+            this.totalPriceLabel.Text = "MAKE YOUR RESERVATION NOW!\n$$ LOCK IN YOUR PRICE - CLICK HERE! $$";
             this.totalPriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.totalPriceLabel.Visible = false;
+            this.totalPriceLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.totalPriceLabel.Click += new System.EventHandler(this.TotalPriceLabel_Click);
             // 
             // Form1
             // 
@@ -387,10 +361,8 @@
             this.Controls.Add(this.summaryLabel);
             this.Controls.Add(this.nightsNumericUpDown);
             this.Controls.Add(this.nightsLabel);
-            this.Controls.Add(this.mealInfoButton);
             this.Controls.Add(this.mealSelectionLabel);
             this.Controls.Add(this.mealGroupBox);
-            this.Controls.Add(this.roomInfoButton);
             this.Controls.Add(this.roomSelectionLabel);
             this.Controls.Add(this.roomGroupBox);
             this.Controls.Add(this.infoGroupBox);
