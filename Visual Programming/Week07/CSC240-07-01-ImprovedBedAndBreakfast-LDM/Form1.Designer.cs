@@ -35,9 +35,15 @@
         private System.Windows.Forms.Label loadingLabel;
         private System.Windows.Forms.Label descriptionLabel;
         private System.Windows.Forms.GroupBox infoGroupBox;
-        private System.Windows.Forms.CheckBox belleAireCheckBox;
-        private System.Windows.Forms.CheckBox lincolnCheckBox;
-        private System.Windows.Forms.Button mealButton;
+        private System.Windows.Forms.RadioButton belleAireRadioButton;
+        private System.Windows.Forms.RadioButton lincolnRadioButton;
+        private System.Windows.Forms.RadioButton continentalRadioButton;
+        private System.Windows.Forms.RadioButton fullRadioButton;
+        private System.Windows.Forms.RadioButton deluxeRadioButton;
+        private System.Windows.Forms.Button roomInfoButton;
+        private System.Windows.Forms.Button mealInfoButton;
+        private System.Windows.Forms.Label roomSelectionLabel;
+        private System.Windows.Forms.Label mealSelectionLabel;
         private System.Windows.Forms.NumericUpDown nightsNumericUpDown;
         private System.Windows.Forms.Label nightsLabel;
         private System.Windows.Forms.Label summaryLabel;
@@ -55,9 +61,15 @@
             this.loadingLabel = new System.Windows.Forms.Label();
             this.descriptionLabel = new System.Windows.Forms.Label();
             this.infoGroupBox = new System.Windows.Forms.GroupBox();
-            this.belleAireCheckBox = new System.Windows.Forms.CheckBox();
-            this.lincolnCheckBox = new System.Windows.Forms.CheckBox();
-            this.mealButton = new System.Windows.Forms.Button();
+            this.belleAireRadioButton = new System.Windows.Forms.RadioButton();
+            this.lincolnRadioButton = new System.Windows.Forms.RadioButton();
+            this.continentalRadioButton = new System.Windows.Forms.RadioButton();
+            this.fullRadioButton = new System.Windows.Forms.RadioButton();
+            this.deluxeRadioButton = new System.Windows.Forms.RadioButton();
+            this.roomInfoButton = new System.Windows.Forms.Button();
+            this.mealInfoButton = new System.Windows.Forms.Button();
+            this.roomSelectionLabel = new System.Windows.Forms.Label();
+            this.mealSelectionLabel = new System.Windows.Forms.Label();
             this.nightsNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.nightsLabel = new System.Windows.Forms.Label();
             this.summaryLabel = new System.Windows.Forms.Label();
@@ -174,51 +186,129 @@
             this.infoGroupBox.TabStop = false;
             this.infoGroupBox.Text = "What would you like to do today?";
             // 
-            // belleAireCheckBox
+            // roomSelectionLabel
             // 
-            this.belleAireCheckBox.AutoSize = true;
-            this.belleAireCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.belleAireCheckBox.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.belleAireCheckBox.Location = new System.Drawing.Point(220, 110);
-            this.belleAireCheckBox.Name = "belleAireCheckBox";
-            this.belleAireCheckBox.Size = new System.Drawing.Size(180, 28);
-            this.belleAireCheckBox.TabIndex = 9;
-            this.belleAireCheckBox.Text = "Belle Aire Suite";
-            this.belleAireCheckBox.UseVisualStyleBackColor = true;
-            this.belleAireCheckBox.CheckedChanged += new System.EventHandler(this.BelleAireCheckBox_CheckedChanged);
+            this.roomSelectionLabel.AutoSize = true;
+            this.roomSelectionLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.roomSelectionLabel.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.roomSelectionLabel.Location = new System.Drawing.Point(220, 105);
+            this.roomSelectionLabel.Name = "roomSelectionLabel";
+            this.roomSelectionLabel.Size = new System.Drawing.Size(160, 21);
+            this.roomSelectionLabel.TabIndex = 9;
+            this.roomSelectionLabel.Text = "SELECT YOUR ROOM:";
             // 
-            // lincolnCheckBox
+            // belleAireRadioButton
             // 
-            this.lincolnCheckBox.AutoSize = true;
-            this.lincolnCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lincolnCheckBox.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.lincolnCheckBox.Location = new System.Drawing.Point(220, 145);
-            this.lincolnCheckBox.Name = "lincolnCheckBox";
-            this.lincolnCheckBox.Size = new System.Drawing.Size(165, 28);
-            this.lincolnCheckBox.TabIndex = 10;
-            this.lincolnCheckBox.Text = "Lincoln Room";
-            this.lincolnCheckBox.UseVisualStyleBackColor = true;
-            this.lincolnCheckBox.CheckedChanged += new System.EventHandler(this.LincolnCheckBox_CheckedChanged);
+            this.belleAireRadioButton.AutoSize = true;
+            this.belleAireRadioButton.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.belleAireRadioButton.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.belleAireRadioButton.Location = new System.Drawing.Point(240, 130);
+            this.belleAireRadioButton.Name = "belleAireRadioButton";
+            this.belleAireRadioButton.Size = new System.Drawing.Size(210, 24);
+            this.belleAireRadioButton.TabIndex = 10;
+            this.belleAireRadioButton.TabStop = true;
+            this.belleAireRadioButton.Text = "Belle Aire Suite - $199.99/night";
+            this.belleAireRadioButton.UseVisualStyleBackColor = true;
+            this.belleAireRadioButton.CheckedChanged += new System.EventHandler(this.BelleAireRadioButton_CheckedChanged);
             // 
-            // mealButton
+            // lincolnRadioButton
             // 
-            this.mealButton.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.mealButton.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.mealButton.ForeColor = System.Drawing.Color.Black;
-            this.mealButton.Location = new System.Drawing.Point(470, 110);
-            this.mealButton.Name = "mealButton";
-            this.mealButton.Size = new System.Drawing.Size(200, 45);
-            this.mealButton.TabIndex = 11;
-            this.mealButton.Text = "Click for meal options";
-            this.mealButton.UseVisualStyleBackColor = false;
-            this.mealButton.Click += new System.EventHandler(this.MealButton_Click);
+            this.lincolnRadioButton.AutoSize = true;
+            this.lincolnRadioButton.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lincolnRadioButton.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.lincolnRadioButton.Location = new System.Drawing.Point(240, 155);
+            this.lincolnRadioButton.Name = "lincolnRadioButton";
+            this.lincolnRadioButton.Size = new System.Drawing.Size(195, 24);
+            this.lincolnRadioButton.TabIndex = 11;
+            this.lincolnRadioButton.TabStop = true;
+            this.lincolnRadioButton.Text = "Lincoln Room - $110/night";
+            this.lincolnRadioButton.UseVisualStyleBackColor = true;
+            this.lincolnRadioButton.CheckedChanged += new System.EventHandler(this.LincolnRadioButton_CheckedChanged);
+            // 
+            // roomInfoButton
+            // 
+            this.roomInfoButton.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.roomInfoButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.roomInfoButton.Location = new System.Drawing.Point(390, 105);
+            this.roomInfoButton.Name = "roomInfoButton";
+            this.roomInfoButton.Size = new System.Drawing.Size(60, 25);
+            this.roomInfoButton.TabIndex = 12;
+            this.roomInfoButton.Text = "Info";
+            this.roomInfoButton.UseVisualStyleBackColor = false;
+            this.roomInfoButton.Click += new System.EventHandler(this.RoomInfoButton_Click);
+            // 
+            // mealSelectionLabel
+            // 
+            this.mealSelectionLabel.AutoSize = true;
+            this.mealSelectionLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.mealSelectionLabel.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.mealSelectionLabel.Location = new System.Drawing.Point(470, 105);
+            this.mealSelectionLabel.Name = "mealSelectionLabel";
+            this.mealSelectionLabel.Size = new System.Drawing.Size(205, 21);
+            this.mealSelectionLabel.TabIndex = 13;
+            this.mealSelectionLabel.Text = "SELECT YOUR BREAKFAST:";
+            // 
+            // continentalRadioButton
+            // 
+            this.continentalRadioButton.AutoSize = true;
+            this.continentalRadioButton.Checked = true;
+            this.continentalRadioButton.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.continentalRadioButton.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.continentalRadioButton.Location = new System.Drawing.Point(490, 130);
+            this.continentalRadioButton.Name = "continentalRadioButton";
+            this.continentalRadioButton.Size = new System.Drawing.Size(160, 24);
+            this.continentalRadioButton.TabIndex = 14;
+            this.continentalRadioButton.TabStop = true;
+            this.continentalRadioButton.Text = "Continental - $6.00";
+            this.continentalRadioButton.UseVisualStyleBackColor = true;
+            this.continentalRadioButton.CheckedChanged += new System.EventHandler(this.ContinentalRadioButton_CheckedChanged);
+            // 
+            // fullRadioButton
+            // 
+            this.fullRadioButton.AutoSize = true;
+            this.fullRadioButton.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.fullRadioButton.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.fullRadioButton.Location = new System.Drawing.Point(490, 155);
+            this.fullRadioButton.Name = "fullRadioButton";
+            this.fullRadioButton.Size = new System.Drawing.Size(115, 24);
+            this.fullRadioButton.TabIndex = 15;
+            this.fullRadioButton.TabStop = true;
+            this.fullRadioButton.Text = "Full - $9.95";
+            this.fullRadioButton.UseVisualStyleBackColor = true;
+            this.fullRadioButton.CheckedChanged += new System.EventHandler(this.FullRadioButton_CheckedChanged);
+            // 
+            // deluxeRadioButton
+            // 
+            this.deluxeRadioButton.AutoSize = true;
+            this.deluxeRadioButton.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.deluxeRadioButton.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.deluxeRadioButton.Location = new System.Drawing.Point(490, 180);
+            this.deluxeRadioButton.Name = "deluxeRadioButton";
+            this.deluxeRadioButton.Size = new System.Drawing.Size(140, 24);
+            this.deluxeRadioButton.TabIndex = 16;
+            this.deluxeRadioButton.TabStop = true;
+            this.deluxeRadioButton.Text = "Deluxe - $16.50";
+            this.deluxeRadioButton.UseVisualStyleBackColor = true;
+            this.deluxeRadioButton.CheckedChanged += new System.EventHandler(this.DeluxeRadioButton_CheckedChanged);
+            // 
+            // mealInfoButton
+            // 
+            this.mealInfoButton.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.mealInfoButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.mealInfoButton.Location = new System.Drawing.Point(680, 105);
+            this.mealInfoButton.Name = "mealInfoButton";
+            this.mealInfoButton.Size = new System.Drawing.Size(60, 25);
+            this.mealInfoButton.TabIndex = 17;
+            this.mealInfoButton.Text = "Info";
+            this.mealInfoButton.UseVisualStyleBackColor = false;
+            this.mealInfoButton.Click += new System.EventHandler(this.MealInfoButton_Click);
             // 
             // nightsLabel
             // 
             this.nightsLabel.AutoSize = true;
             this.nightsLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.nightsLabel.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.nightsLabel.Location = new System.Drawing.Point(200, 185);
+            this.nightsLabel.Location = new System.Drawing.Point(220, 215);
             this.nightsLabel.Name = "nightsLabel";
             this.nightsLabel.Size = new System.Drawing.Size(160, 20);
             this.nightsLabel.TabIndex = 12;
@@ -227,7 +317,7 @@
             // nightsNumericUpDown
             // 
             this.nightsNumericUpDown.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nightsNumericUpDown.Location = new System.Drawing.Point(360, 183);
+            this.nightsNumericUpDown.Location = new System.Drawing.Point(380, 213);
             this.nightsNumericUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             this.nightsNumericUpDown.Maximum = new decimal(new int[] { 30, 0, 0, 0 });
             this.nightsNumericUpDown.Name = "nightsNumericUpDown";
@@ -270,9 +360,15 @@
             this.Controls.Add(this.summaryLabel);
             this.Controls.Add(this.nightsNumericUpDown);
             this.Controls.Add(this.nightsLabel);
-            this.Controls.Add(this.mealButton);
-            this.Controls.Add(this.lincolnCheckBox);
-            this.Controls.Add(this.belleAireCheckBox);
+            this.Controls.Add(this.mealInfoButton);
+            this.Controls.Add(this.deluxeRadioButton);
+            this.Controls.Add(this.fullRadioButton);
+            this.Controls.Add(this.continentalRadioButton);
+            this.Controls.Add(this.mealSelectionLabel);
+            this.Controls.Add(this.roomInfoButton);
+            this.Controls.Add(this.lincolnRadioButton);
+            this.Controls.Add(this.belleAireRadioButton);
+            this.Controls.Add(this.roomSelectionLabel);
             this.Controls.Add(this.infoGroupBox);
             this.Controls.Add(this.descriptionLabel);
             this.Controls.Add(this.loadingLabel);

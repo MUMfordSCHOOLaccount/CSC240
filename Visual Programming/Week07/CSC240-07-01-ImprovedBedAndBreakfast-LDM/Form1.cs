@@ -18,6 +18,10 @@ namespace CSC240_07_01_ImprovedBedAndBreakfast_LDM
             InitializeComponent();
             loadingLabel.Visible = false;
 
+            // Set default breakfast selection
+            selectedBreakfast = "Continental Breakfast";
+            breakfastPrice = 6.00m;
+
             imagePaths = new string[]
             {
                 "Bed-and-breakfast.png",
@@ -138,68 +142,96 @@ namespace CSC240_07_01_ImprovedBedAndBreakfast_LDM
             }
         }
 
-        private void BelleAireCheckBox_CheckedChanged(object sender, EventArgs e)
+        private void BelleAireRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            if (belleAireCheckBox.Checked)
+            if (belleAireRadioButton.Checked)
             {
-                // Uncheck the other room option
-                lincolnCheckBox.Checked = false;
-                
-                // Update room selection
                 selectedSuite = "Belle Aire Suite";
                 suitePrice = 199.99m;
-                
-                BelleAireForm belleAireForm = new BelleAireForm();
-                belleAireForm.ShowDialog();
-                
-                // Update the pricing display
-                UpdatePricingDisplay();
-            }
-            else if (!lincolnCheckBox.Checked)
-            {
-                // If unchecking and no other room is selected, clear room selection
-                selectedSuite = "";
-                suitePrice = 0;
                 UpdatePricingDisplay();
             }
         }
 
-        private void LincolnCheckBox_CheckedChanged(object sender, EventArgs e)
+        private void LincolnRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            if (lincolnCheckBox.Checked)
+            if (lincolnRadioButton.Checked)
             {
-                // Uncheck the other room option
-                belleAireCheckBox.Checked = false;
-                
-                // Update room selection
                 selectedSuite = "Lincoln Room";
                 suitePrice = 110.00m;
-                
-                LincolnForm lincolnForm = new LincolnForm();
-                lincolnForm.ShowDialog();
-                
-                // Update the pricing display
-                UpdatePricingDisplay();
-            }
-            else if (!belleAireCheckBox.Checked)
-            {
-                // If unchecking and no other room is selected, clear room selection
-                selectedSuite = "";
-                suitePrice = 0;
                 UpdatePricingDisplay();
             }
         }
 
-        private void MealButton_Click(object sender, EventArgs e)
+        private void ContinentalRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            BreakfastOptionForm breakfastForm = new BreakfastOptionForm();
-            
-            if (breakfastForm.ShowDialog() == DialogResult.OK || true) // Always update even if just closed
+            if (continentalRadioButton.Checked)
             {
-                selectedBreakfast = breakfastForm.SelectedBreakfastName;
-                breakfastPrice = breakfastForm.SelectedBreakfastPrice;
+                selectedBreakfast = "Continental Breakfast";
+                breakfastPrice = 6.00m;
                 UpdatePricingDisplay();
             }
+        }
+
+        private void FullRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (fullRadioButton.Checked)
+            {
+                selectedBreakfast = "Full Breakfast";
+                breakfastPrice = 9.95m;
+                UpdatePricingDisplay();
+            }
+        }
+
+        private void DeluxeRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (deluxeRadioButton.Checked)
+            {
+                selectedBreakfast = "Deluxe Breakfast";
+                breakfastPrice = 16.50m;
+                UpdatePricingDisplay();
+            }
+        }
+
+        private void RoomInfoButton_Click(object sender, EventArgs e)
+        {
+            string roomInfo = "ROOM DETAILS:\n\n" +
+                "?? BELLE AIRE SUITE ($199.99/night)\n" +
+                "   • Two bedrooms\n" +
+                "   • Two full bathrooms\n" +
+                "   • Private balcony with garden view\n" +
+                "   • King bed in master, queen in second bedroom\n" +
+                "   • Perfect for families or couples traveling together\n\n" +
+                "??? LINCOLN ROOM ($110/night)\n" +
+                "   • Return to the 1850s!\n" +
+                "   • One bedroom with queen bed\n" +
+                "   • Private bathroom\n" +
+                "   • Historic charm and period decor\n" +
+                "   • Cozy and romantic";
+
+            MessageBox.Show(roomInfo, "Room Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void MealInfoButton_Click(object sender, EventArgs e)
+        {
+            string mealInfo = "BREAKFAST OPTIONS:\n\n" +
+                "? CONTINENTAL ($6.00)\n" +
+                "   • Fresh brewed coffee or tea\n" +
+                "   • Orange juice\n" +
+                "   • Assorted pastries and muffins\n" +
+                "   • Fresh seasonal fruit\n\n" +
+                "?? FULL BREAKFAST ($9.95)\n" +
+                "   • Everything in Continental, plus:\n" +
+                "   • Two eggs (your style)\n" +
+                "   • Bacon or sausage\n" +
+                "   • Toast with butter and jam\n\n" +
+                "?? DELUXE BREAKFAST ($16.50)\n" +
+                "   • Eggs Benedict or Belgian waffles\n" +
+                "   • Fresh fruit parfait\n" +
+                "   • Gourmet coffee or specialty tea\n" +
+                "   • Fresh squeezed orange juice\n" +
+                "   • Choice of bacon, sausage, or smoked salmon";
+
+            MessageBox.Show(mealInfo, "Breakfast Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void NightsNumericUpDown_ValueChanged(object sender, EventArgs e)
