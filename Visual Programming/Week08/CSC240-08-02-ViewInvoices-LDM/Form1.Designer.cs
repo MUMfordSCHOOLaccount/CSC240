@@ -20,6 +20,8 @@ namespace CSC240_08_02_ViewInvoices_LDM
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.fileComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -28,6 +30,25 @@ namespace CSC240_08_02_ViewInvoices_LDM
             this.amountBox = new System.Windows.Forms.TextBox();
             this.viewButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 35);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Select file:";
+            // 
+            // fileComboBox
+            // 
+            this.fileComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.fileComboBox.FormattingEnabled = true;
+            this.fileComboBox.Location = new System.Drawing.Point(120, 32);
+            this.fileComboBox.Name = "fileComboBox";
+            this.fileComboBox.Size = new System.Drawing.Size(140, 21);
+            this.fileComboBox.TabIndex = 9;
+            this.fileComboBox.SelectedIndexChanged += new System.EventHandler(this.FileComboBox_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -42,7 +63,7 @@ namespace CSC240_08_02_ViewInvoices_LDM
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 43);
+            this.label2.Location = new System.Drawing.Point(12, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 1;
@@ -68,28 +89,28 @@ namespace CSC240_08_02_ViewInvoices_LDM
             // 
             // invoiceBox
             // 
-            this.invoiceBox.Location = new System.Drawing.Point(120, 40);
+            this.invoiceBox.Location = new System.Drawing.Point(120, 80);
             this.invoiceBox.Name = "invoiceBox";
             this.invoiceBox.Size = new System.Drawing.Size(100, 20);
             this.invoiceBox.TabIndex = 4;
             // 
             // nameBox
             // 
-            this.nameBox.Location = new System.Drawing.Point(120, 70);
+            this.nameBox.Location = new System.Drawing.Point(120, 110);
             this.nameBox.Name = "nameBox";
             this.nameBox.Size = new System.Drawing.Size(100, 20);
             this.nameBox.TabIndex = 5;
             // 
             // amountBox
             // 
-            this.amountBox.Location = new System.Drawing.Point(120, 100);
+            this.amountBox.Location = new System.Drawing.Point(120, 140);
             this.amountBox.Name = "amountBox";
             this.amountBox.Size = new System.Drawing.Size(100, 20);
             this.amountBox.TabIndex = 6;
             // 
             // viewButton
             // 
-            this.viewButton.Location = new System.Drawing.Point(120, 130);
+            this.viewButton.Location = new System.Drawing.Point(120, 170);
             this.viewButton.Name = "viewButton";
             this.viewButton.Size = new System.Drawing.Size(75, 23);
             this.viewButton.TabIndex = 7;
@@ -101,7 +122,7 @@ namespace CSC240_08_02_ViewInvoices_LDM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 161);
+            this.ClientSize = new System.Drawing.Size(320, 210);
             this.Controls.Add(this.viewButton);
             this.Controls.Add(this.amountBox);
             this.Controls.Add(this.nameBox);
@@ -109,6 +130,8 @@ namespace CSC240_08_02_ViewInvoices_LDM
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.fileComboBox);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -120,6 +143,8 @@ namespace CSC240_08_02_ViewInvoices_LDM
         }
 
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox fileComboBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

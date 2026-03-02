@@ -19,8 +19,23 @@ namespace CSC240_08_01_EnterInvoices_LDM
         {
             InitializeComponent();
             FILENAME = GetInvoiceFilePath();
+            // Create a new sequential invoice file so each run can create a new file (invoices.txt, invoices1.txt...)
+            FILENAME = GetNextAvailableInvoiceFilePath(FILENAME);
+            bool newFile = !File.Exists(FILENAME);
             outFile = new FileStream(FILENAME, FileMode.Append, FileAccess.Write);
             writer = new StreamWriter(outFile);
+            if (newFile)
+            {
+                try
+                {
+                    string indexPath = Path.Combine(Path.GetDirectoryName(FILENAME), "Index.txt");
+                    File.AppendAllText(indexPath, Path.GetFileName(FILENAME) + System.Environment.NewLine);
+                }
+                catch
+                {
+                    // ignore index write errors
+                }
+            }
         }
 
         private string GetInvoiceFilePath()
@@ -49,6 +64,31 @@ namespace CSC240_08_01_EnterInvoices_LDM
                 // ignore
             }
             return path;
+        }
+
+        private string GetNextAvailableInvoiceFilePath(string configuredPath)
+        {
+            try
+            {
+                string dir = Path.GetDirectoryName(configuredPath);
+                if (string.IsNullOrEmpty(dir)) dir = Application.StartupPath;
+                if (!Directory.Exists(dir)) Directory.CreateDirectory(dir);
+
+                string baseName = Path.GetFileNameWithoutExtension(configuredPath);
+                string ext = Path.GetExtension(configuredPath);
+                string path = Path.Combine(dir, baseName + ext);
+                int i = 1;
+                while (File.Exists(path))
+                {
+                    path = Path.Combine(dir, baseName + i + ext);
+                    i++;
+                }
+                return path;
+            }
+            catch
+            {
+                return configuredPath;
+            }
         }
 
         private void EnterButton_Click(object sender, EventArgs e)
