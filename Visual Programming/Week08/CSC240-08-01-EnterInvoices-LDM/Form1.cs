@@ -19,8 +19,8 @@ namespace CSC240_08_01_EnterInvoices_LDM
         {
             InitializeComponent();
             FILENAME = GetInvoiceFilePath();
-            // Create a new sequential invoice file so each run can create a new file (invoices.txt, invoices1.txt...)
-            FILENAME = GetNextAvailableInvoiceFilePath(FILENAME);
+            // Create a new timestamped invoice file with zero-padded sequence if needed
+            FILENAME = GetTimestampedInvoiceFilePath(FILENAME);
             bool newFile = !File.Exists(FILENAME);
             outFile = new FileStream(FILENAME, FileMode.Append, FileAccess.Write);
             writer = new StreamWriter(outFile);
@@ -28,8 +28,9 @@ namespace CSC240_08_01_EnterInvoices_LDM
             {
                 try
                 {
-                    string indexPath = Path.Combine(Path.GetDirectoryName(FILENAME), "Index.txt");
-                    File.AppendAllText(indexPath, Path.GetFileName(FILENAME) + System.Environment.NewLine);
+                    string indexPath = Path.Combine(Path.GetDirectoryName(FILENAME), "Index.csv");
+                    string line = string.Format("{0},{1}", Path.GetFileName(FILENAME), System.DateTime.UtcNow.ToString("o"));
+                    File.AppendAllText(indexPath, line + System.Environment.NewLine);
                 }
                 catch
                 {
@@ -73,15 +74,17 @@ namespace CSC240_08_01_EnterInvoices_LDM
                 string dir = Path.GetDirectoryName(configuredPath);
                 if (string.IsNullOrEmpty(dir)) dir = Application.StartupPath;
                 if (!Directory.Exists(dir)) Directory.CreateDirectory(dir);
-
+                // Use timestamp-based filename: base_yyyyMMdd_HHmmss.txt
                 string baseName = Path.GetFileNameWithoutExtension(configuredPath);
                 string ext = Path.GetExtension(configuredPath);
-                string path = Path.Combine(dir, baseName + ext);
-                int i = 1;
+                string timestamp = System.DateTime.UtcNow.ToString("yyyyMMdd_HHmmss");
+                string path = Path.Combine(dir, baseName + "_" + timestamp + ext);
+                // If file already exists (unlikely), append a zero-padded sequence
+                int seq = 1;
                 while (File.Exists(path))
                 {
-                    path = Path.Combine(dir, baseName + i + ext);
-                    i++;
+                    path = Path.Combine(dir, string.Format("{0}_{1}_{2:D3}{3}", baseName, timestamp, seq, ext));
+                    seq++;
                 }
                 return path;
             }
@@ -89,6 +92,12 @@ namespace CSC240_08_01_EnterInvoices_LDM
             {
                 return configuredPath;
             }
+        }
+
+        private string GetTimestampedInvoiceFilePath(string configuredPath)
+        {
+            // wrapper kept for clarity; uses updated GetNextAvailableInvoiceFilePath
+            return GetNextAvailableInvoiceFilePath(configuredPath);
         }
 
         private void EnterButton_Click(object sender, EventArgs e)

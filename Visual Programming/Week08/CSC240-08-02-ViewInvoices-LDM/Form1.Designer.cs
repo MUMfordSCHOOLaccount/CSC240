@@ -22,6 +22,7 @@ namespace CSC240_08_02_ViewInvoices_LDM
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.fileComboBox = new System.Windows.Forms.ComboBox();
+            this.archiveButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -49,6 +50,16 @@ namespace CSC240_08_02_ViewInvoices_LDM
             this.fileComboBox.Size = new System.Drawing.Size(140, 21);
             this.fileComboBox.TabIndex = 9;
             this.fileComboBox.SelectedIndexChanged += new System.EventHandler(this.FileComboBox_SelectedIndexChanged);
+            // 
+            // archiveButton
+            // 
+            this.archiveButton.Location = new System.Drawing.Point(220, 170);
+            this.archiveButton.Name = "archiveButton";
+            this.archiveButton.Size = new System.Drawing.Size(75, 23);
+            this.archiveButton.TabIndex = 10;
+            this.archiveButton.Text = "Archive file";
+            this.archiveButton.UseVisualStyleBackColor = true;
+            this.archiveButton.Click += new System.EventHandler(this.ArchiveButton_Click);
             // 
             // label1
             // 
@@ -122,7 +133,7 @@ namespace CSC240_08_02_ViewInvoices_LDM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(320, 210);
+            this.ClientSize = new System.Drawing.Size(360, 240);
             this.Controls.Add(this.viewButton);
             this.Controls.Add(this.amountBox);
             this.Controls.Add(this.nameBox);
@@ -133,6 +144,7 @@ namespace CSC240_08_02_ViewInvoices_LDM
             this.Controls.Add(this.fileComboBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.archiveButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

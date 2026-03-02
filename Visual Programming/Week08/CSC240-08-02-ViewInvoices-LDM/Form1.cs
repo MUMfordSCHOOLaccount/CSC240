@@ -93,19 +93,28 @@ namespace CSC240_08_02_ViewInvoices_LDM
             {
                 string dir = Path.GetDirectoryName(FILENAME);
                 if (string.IsNullOrEmpty(dir)) dir = Application.StartupPath;
-                string indexPath = Path.Combine(dir, "Index.txt");
+                string indexPath = Path.Combine(dir, "Index.csv");
+
+                // Ensure index exists; if not, create by scanning directory
+                if (!File.Exists(indexPath))
+                {
+                    ScanAndBuildIndex(dir, indexPath);
+                }
+
                 if (File.Exists(indexPath))
                 {
                     var lines = File.ReadAllLines(indexPath);
                     foreach (var line in lines)
                     {
-                        if (!string.IsNullOrWhiteSpace(line))
+                        if (string.IsNullOrWhiteSpace(line)) continue;
+                        var parts = line.Split(','); // filename,timestamp
+                        string fileName = parts[0].Trim();
+                        string display = fileName;
+                        if (parts.Length > 1) display += " (" + parts[1].Trim() + ")";
+                        string candidate = Path.Combine(dir, fileName);
+                        if (File.Exists(candidate))
                         {
-                            string candidate = Path.Combine(dir, line.Trim());
-                            if (File.Exists(candidate))
-                            {
-                                fileComboBox.Items.Add(line.Trim());
-                            }
+                            fileComboBox.Items.Add(new ComboItem { FileName = fileName, Display = display });
                         }
                     }
                     if (fileComboBox.Items.Count > 0)
@@ -120,15 +129,43 @@ namespace CSC240_08_02_ViewInvoices_LDM
             }
         }
 
+        private void ScanAndBuildIndex(string dir, string indexPath)
+        {
+            try
+            {
+                var files = Directory.GetFiles(dir, "*.txt");
+                using (var sw = new StreamWriter(indexPath, false))
+                {
+                    foreach (var f in files)
+                    {
+                        string name = Path.GetFileName(f);
+                        string ts = File.GetCreationTimeUtc(f).ToString("o");
+                        sw.WriteLine(string.Format("{0},{1}", name, ts));
+                    }
+                }
+            }
+            catch
+            {
+                // ignore
+            }
+        }
+
+        private class ComboItem
+        {
+            public string FileName { get; set; }
+            public string Display { get; set; }
+            public override string ToString() { return Display; }
+        }
+
         private void FileComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
                 string dir = Path.GetDirectoryName(FILENAME);
                 if (string.IsNullOrEmpty(dir)) dir = Application.StartupPath;
-                string selected = fileComboBox.SelectedItem as string;
-                if (string.IsNullOrEmpty(selected)) return;
-                string path = Path.Combine(dir, selected);
+                var item = fileComboBox.SelectedItem as ComboItem;
+                if (item == null) return;
+                string path = Path.Combine(dir, item.FileName);
                 if (File.Exists(path))
                 {
                     reader?.Close();
@@ -136,6 +173,50 @@ namespace CSC240_08_02_ViewInvoices_LDM
                     file = new FileStream(path, FileMode.Open, FileAccess.Read);
                     reader = new StreamReader(file);
                 }
+            }
+            catch
+            {
+                // ignore
+            }
+        }
+
+        private void ArchiveButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var item = fileComboBox.SelectedItem as ComboItem;
+                if (item == null) return;
+                string dir = Path.GetDirectoryName(FILENAME);
+                if (string.IsNullOrEmpty(dir)) dir = Application.StartupPath;
+                string path = Path.Combine(dir, item.FileName);
+                if (!File.Exists(path)) return;
+
+                string archiveDir = Path.Combine(dir, "Archive");
+                if (!Directory.Exists(archiveDir)) Directory.CreateDirectory(archiveDir);
+                string dest = Path.Combine(archiveDir, item.FileName);
+                File.Move(path, dest);
+
+                // Remove from Index.csv
+                string indexPath = Path.Combine(dir, "Index.csv");
+                if (File.Exists(indexPath))
+                {
+                    var lines = File.ReadAllLines(indexPath);
+                    using (var sw = new StreamWriter(indexPath, false))
+                    {
+                        foreach (var line in lines)
+                        {
+                            if (string.IsNullOrWhiteSpace(line)) continue;
+                            var parts = line.Split(',');
+                            if (parts.Length == 0) continue;
+                            if (parts[0].Trim().Equals(item.FileName, System.StringComparison.OrdinalIgnoreCase)) continue;
+                            sw.WriteLine(line);
+                        }
+                    }
+                }
+
+                // update UI
+                fileComboBox.Items.Remove(item);
+                if (fileComboBox.Items.Count > 0) fileComboBox.SelectedIndex = fileComboBox.Items.Count - 1;
             }
             catch
             {
