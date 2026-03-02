@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace CSC240_08_01_EnterInvoices_LDM
+namespace CSC240_08_02_ViewInvoices_LDM
 {
     static class Program
     {
