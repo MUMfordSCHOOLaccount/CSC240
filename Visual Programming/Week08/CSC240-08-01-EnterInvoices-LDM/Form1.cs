@@ -19,8 +19,24 @@ namespace CSC240_08_01_EnterInvoices_LDM
         {
             InitializeComponent();
             FILENAME = GetInvoiceFilePath();
+            // Create a new timestamped invoice file with zero-padded sequence if needed
+            FILENAME = GetTimestampedInvoiceFilePath(FILENAME);
+            bool newFile = !File.Exists(FILENAME);
             outFile = new FileStream(FILENAME, FileMode.Append, FileAccess.Write);
             writer = new StreamWriter(outFile);
+            if (newFile)
+            {
+                try
+                {
+                    string indexPath = Path.Combine(Path.GetDirectoryName(FILENAME), "Index.csv");
+                    string line = string.Format("{0},{1}", Path.GetFileName(FILENAME), System.DateTime.UtcNow.ToString("o"));
+                    File.AppendAllText(indexPath, line + System.Environment.NewLine);
+                }
+                catch
+                {
+                    // ignore index write errors
+                }
+            }
         }
 
         private string GetInvoiceFilePath()
@@ -49,6 +65,47 @@ namespace CSC240_08_01_EnterInvoices_LDM
                 // ignore
             }
             return path;
+        }
+
+        private string GetNextAvailableInvoiceFilePath(string configuredPath)
+        {
+            try
+            {
+                string dir = Path.GetDirectoryName(configuredPath);
+                if (string.IsNullOrEmpty(dir)) dir = Application.StartupPath;
+                if (!Directory.Exists(dir)) Directory.CreateDirectory(dir);
+                // Use zero-padded numeric sequence filenames: base_001.txt, base_002.txt, ...
+                string baseName = Path.GetFileNameWithoutExtension(configuredPath);
+                string ext = Path.GetExtension(configuredPath);
+                // Find existing files matching base_###
+                var files = Directory.GetFiles(dir, baseName + "_*" + ext);
+                int maxSeq = 0;
+                foreach (var f in files)
+                {
+                    var name = Path.GetFileNameWithoutExtension(f);
+                    var parts = name.Split('_');
+                    if (parts.Length > 1)
+                    {
+                        if (int.TryParse(parts[parts.Length - 1], out int s))
+                        {
+                            if (s > maxSeq) maxSeq = s;
+                        }
+                    }
+                }
+                int next = maxSeq + 1;
+                string path = Path.Combine(dir, string.Format("{0}_{1:D3}{2}", baseName, next, ext));
+                return path;
+            }
+            catch
+            {
+                return configuredPath;
+            }
+        }
+
+        private string GetTimestampedInvoiceFilePath(string configuredPath)
+        {
+            // wrapper kept for clarity; uses updated GetNextAvailableInvoiceFilePath
+            return GetNextAvailableInvoiceFilePath(configuredPath);
         }
 
         private void EnterButton_Click(object sender, EventArgs e)
