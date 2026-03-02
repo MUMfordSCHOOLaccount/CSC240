@@ -54,8 +54,12 @@
     <Compile Include="ViewForm.Designer.cs" />
     <Compile Include="Program.cs" />
     <EmbeddedResource Include="MainForm.resx" />
-    <EmbeddedResource Include="EnterForm.resx" />
-    <EmbeddedResource Include="ViewForm.resx" />
+    <EmbeddedResource Include="EnterForm.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForm.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
