@@ -1,22 +1,54 @@
 using System;
 using System.IO;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace CSC240_08_01_EnterInvoices_LDM
 {
     public partial class Form1 : Form
     {
         const string DELIM = ",";
-        const string FILENAME = Path.Combine(Application.StartupPath, "invoices.txt");
+        string FILENAME;
         int num;
         string name;
         double amount;
-        static FileStream outFile = new FileStream(FILENAME, FileMode.Create, FileAccess.Write);
-        StreamWriter writer = new StreamWriter(outFile);
+        static FileStream outFile;
+        StreamWriter writer;
 
         public Form1()
         {
             InitializeComponent();
+            FILENAME = GetInvoiceFilePath();
+            outFile = new FileStream(FILENAME, FileMode.Append, FileAccess.Write);
+            writer = new StreamWriter(outFile);
+        }
+
+        private string GetInvoiceFilePath()
+        {
+            string path = Path.Combine(Application.StartupPath, "invoices.txt");
+            try
+            {
+                string configPath = Path.Combine(Application.StartupPath, "App.config");
+                if (File.Exists(configPath))
+                {
+                    XmlDocument doc = new XmlDocument();
+                    doc.Load(configPath);
+                    XmlNode node = doc.SelectSingleNode("//appSettings/add[@key='InvoiceFilePath']");
+                    if (node != null && node.Attributes["value"] != null)
+                    {
+                        string value = node.Attributes["value"].Value;
+                        if (!string.IsNullOrEmpty(value))
+                        {
+                            path = value;
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                // ignore
+            }
+            return path;
         }
 
         private void EnterButton_Click(object sender, EventArgs e)
@@ -32,7 +64,8 @@ namespace CSC240_08_01_EnterInvoices_LDM
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            // No additional code needed here as Dispose handles closing
+            writer.Close();
+            outFile.Close();
         }
     }
 }
