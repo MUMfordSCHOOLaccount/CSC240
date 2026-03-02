@@ -74,18 +74,26 @@ namespace CSC240_08_01_EnterInvoices_LDM
                 string dir = Path.GetDirectoryName(configuredPath);
                 if (string.IsNullOrEmpty(dir)) dir = Application.StartupPath;
                 if (!Directory.Exists(dir)) Directory.CreateDirectory(dir);
-                // Use timestamp-based filename: base_yyyyMMdd_HHmmss.txt
+                // Use zero-padded numeric sequence filenames: base_001.txt, base_002.txt, ...
                 string baseName = Path.GetFileNameWithoutExtension(configuredPath);
                 string ext = Path.GetExtension(configuredPath);
-                string timestamp = System.DateTime.UtcNow.ToString("yyyyMMdd_HHmmss");
-                string path = Path.Combine(dir, baseName + "_" + timestamp + ext);
-                // If file already exists (unlikely), append a zero-padded sequence
-                int seq = 1;
-                while (File.Exists(path))
+                // Find existing files matching base_###
+                var files = Directory.GetFiles(dir, baseName + "_*" + ext);
+                int maxSeq = 0;
+                foreach (var f in files)
                 {
-                    path = Path.Combine(dir, string.Format("{0}_{1}_{2:D3}{3}", baseName, timestamp, seq, ext));
-                    seq++;
+                    var name = Path.GetFileNameWithoutExtension(f);
+                    var parts = name.Split('_');
+                    if (parts.Length > 1)
+                    {
+                        if (int.TryParse(parts[parts.Length - 1], out int s))
+                        {
+                            if (s > maxSeq) maxSeq = s;
+                        }
+                    }
                 }
+                int next = maxSeq + 1;
+                string path = Path.Combine(dir, string.Format("{0}_{1:D3}{2}", baseName, next, ext));
                 return path;
             }
             catch

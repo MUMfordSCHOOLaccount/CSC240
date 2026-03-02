@@ -23,6 +23,7 @@ namespace CSC240_08_02_ViewInvoices_LDM
             this.label5 = new System.Windows.Forms.Label();
             this.fileComboBox = new System.Windows.Forms.ComboBox();
             this.archiveButton = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -60,6 +61,16 @@ namespace CSC240_08_02_ViewInvoices_LDM
             this.archiveButton.Text = "Archive file";
             this.archiveButton.UseVisualStyleBackColor = true;
             this.archiveButton.Click += new System.EventHandler(this.ArchiveButton_Click);
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.Location = new System.Drawing.Point(300, 170);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteButton.TabIndex = 11;
+            this.deleteButton.Text = "Delete file";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // label1
             // 
@@ -145,6 +156,7 @@ namespace CSC240_08_02_ViewInvoices_LDM
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.archiveButton);
+            this.Controls.Add(this.deleteButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

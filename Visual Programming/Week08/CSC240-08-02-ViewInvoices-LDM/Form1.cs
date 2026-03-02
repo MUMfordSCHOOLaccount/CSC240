@@ -109,12 +109,12 @@ namespace CSC240_08_02_ViewInvoices_LDM
                         if (string.IsNullOrWhiteSpace(line)) continue;
                         var parts = line.Split(','); // filename,timestamp
                         string fileName = parts[0].Trim();
+                        string ts = parts.Length > 1 ? parts[1].Trim() : "";
                         string display = fileName;
-                        if (parts.Length > 1) display += " (" + parts[1].Trim() + ")";
                         string candidate = Path.Combine(dir, fileName);
                         if (File.Exists(candidate))
                         {
-                            fileComboBox.Items.Add(new ComboItem { FileName = fileName, Display = display });
+                            fileComboBox.Items.Add(new ComboItem { FileName = fileName, Display = display, Timestamp = ts });
                         }
                     }
                     if (fileComboBox.Items.Count > 0)
@@ -154,6 +154,7 @@ namespace CSC240_08_02_ViewInvoices_LDM
         {
             public string FileName { get; set; }
             public string Display { get; set; }
+            public string Timestamp { get; set; }
             public override string ToString() { return Display; }
         }
 
@@ -186,6 +187,8 @@ namespace CSC240_08_02_ViewInvoices_LDM
             {
                 var item = fileComboBox.SelectedItem as ComboItem;
                 if (item == null) return;
+                var confirm = MessageBox.Show("Archive selected file?", "Confirm Archive", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (confirm != DialogResult.Yes) return;
                 string dir = Path.GetDirectoryName(FILENAME);
                 if (string.IsNullOrEmpty(dir)) dir = Application.StartupPath;
                 string path = Path.Combine(dir, item.FileName);
@@ -215,6 +218,47 @@ namespace CSC240_08_02_ViewInvoices_LDM
                 }
 
                 // update UI
+                fileComboBox.Items.Remove(item);
+                if (fileComboBox.Items.Count > 0) fileComboBox.SelectedIndex = fileComboBox.Items.Count - 1;
+            }
+            catch
+            {
+                // ignore
+            }
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var item = fileComboBox.SelectedItem as ComboItem;
+                if (item == null) return;
+                var confirm = MessageBox.Show("Permanently delete selected invoice file? This cannot be undone.", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (confirm != DialogResult.Yes) return;
+                string dir = Path.GetDirectoryName(FILENAME);
+                if (string.IsNullOrEmpty(dir)) dir = Application.StartupPath;
+                string path = Path.Combine(dir, item.FileName);
+                if (!File.Exists(path)) return;
+                File.Delete(path);
+
+                // Remove from Index.csv
+                string indexPath = Path.Combine(dir, "Index.csv");
+                if (File.Exists(indexPath))
+                {
+                    var lines = File.ReadAllLines(indexPath);
+                    using (var sw = new StreamWriter(indexPath, false))
+                    {
+                        foreach (var line in lines)
+                        {
+                            if (string.IsNullOrWhiteSpace(line)) continue;
+                            var parts = line.Split(',');
+                            if (parts.Length == 0) continue;
+                            if (parts[0].Trim().Equals(item.FileName, System.StringComparison.OrdinalIgnoreCase)) continue;
+                            sw.WriteLine(line);
+                        }
+                    }
+                }
+
                 fileComboBox.Items.Remove(item);
                 if (fileComboBox.Items.Count > 0) fileComboBox.SelectedIndex = fileComboBox.Items.Count - 1;
             }
