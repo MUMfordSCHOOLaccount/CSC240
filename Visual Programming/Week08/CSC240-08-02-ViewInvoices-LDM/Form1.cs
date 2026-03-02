@@ -8,18 +8,18 @@ namespace CSC240_08_02_ViewInvoices_LDM
     public partial class Form1 : Form
     {
         const char DELIM = ',';
-        const string FILENAME = Path.Combine(Application.StartupPath, "invoices.txt");
+        string FILENAME;
         string recordIn;
         string[] fields;
-        static FileStream file = new FileStream(FILENAME, FileMode.Open, FileAccess.Read);
-        StreamReader reader = new StreamReader(file);
-
-        private string invoiceFilePath;
+        static FileStream file;
+        StreamReader reader;
 
         public Form1()
         {
             InitializeComponent();
-            invoiceFilePath = GetInvoiceFilePath();
+            FILENAME = GetInvoiceFilePath();
+            file = new FileStream(FILENAME, FileMode.Open, FileAccess.Read);
+            reader = new StreamReader(file);
         }
 
         private string GetInvoiceFilePath()
@@ -27,7 +27,6 @@ namespace CSC240_08_02_ViewInvoices_LDM
             string path = Path.Combine(Application.StartupPath, "invoices.txt");
             try
             {
-                // Assume same config, but since separate project, perhaps hardcode or same logic
                 string configPath = Path.Combine(Application.StartupPath, "App.config");
                 if (File.Exists(configPath))
                 {
@@ -49,30 +48,6 @@ namespace CSC240_08_02_ViewInvoices_LDM
                 // ignore
             }
             return path;
-        }
-
-        private void ButtonLoad_Click(object sender, EventArgs e)
-        {
-            listBoxInvoices.Items.Clear();
-            try
-            {
-                if (File.Exists(invoiceFilePath))
-                {
-                    string[] lines = File.ReadAllLines(invoiceFilePath);
-                    foreach (string line in lines)
-                    {
-                        listBoxInvoices.Items.Add(line);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Invoice file not found.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error loading invoices: " + ex.Message);
-            }
         }
 
         private void ViewButton_Click(object sender, EventArgs e)

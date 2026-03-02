@@ -51,5 +51,8 @@
     <Compile Include="Program.cs" />
     <EmbeddedResource Include="Form1.resx" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
