@@ -104,22 +104,23 @@ namespace CSC240_08_02_ViewInvoices_LDM
                 if (File.Exists(indexPath))
                 {
                     var lines = File.ReadAllLines(indexPath);
+                    listViewFiles.Items.Clear();
                     foreach (var line in lines)
                     {
                         if (string.IsNullOrWhiteSpace(line)) continue;
                         var parts = line.Split(','); // filename,timestamp
                         string fileName = parts[0].Trim();
                         string ts = parts.Length > 1 ? parts[1].Trim() : "";
-                        string display = fileName;
                         string candidate = Path.Combine(dir, fileName);
                         if (File.Exists(candidate))
                         {
-                            fileComboBox.Items.Add(new ComboItem { FileName = fileName, Display = display, Timestamp = ts });
+                            var lvi = new System.Windows.Forms.ListViewItem(new string[] { fileName, ts });
+                            listViewFiles.Items.Add(lvi);
                         }
                     }
-                    if (fileComboBox.Items.Count > 0)
+                    if (listViewFiles.Items.Count > 0)
                     {
-                        fileComboBox.SelectedIndex = fileComboBox.Items.Count - 1; // select latest
+                        listViewFiles.Items[listViewFiles.Items.Count - 1].Selected = true;
                     }
                 }
             }
@@ -150,23 +151,23 @@ namespace CSC240_08_02_ViewInvoices_LDM
             }
         }
 
-        private class ComboItem
-        {
-            public string FileName { get; set; }
-            public string Display { get; set; }
-            public string Timestamp { get; set; }
-            public override string ToString() { return Display; }
-        }
+        // ListView is used now; helper not needed
 
         private void FileComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // kept for compatibility if called; no-op
+        }
+
+        private void ListViewFiles_SelectedIndexChanged(object sender, EventArgs e)
+        {
             try
             {
+                if (listViewFiles.SelectedItems.Count == 0) return;
+                var sel = listViewFiles.SelectedItems[0];
+                string fileName = sel.SubItems[0].Text;
                 string dir = Path.GetDirectoryName(FILENAME);
                 if (string.IsNullOrEmpty(dir)) dir = Application.StartupPath;
-                var item = fileComboBox.SelectedItem as ComboItem;
-                if (item == null) return;
-                string path = Path.Combine(dir, item.FileName);
+                string path = Path.Combine(dir, fileName);
                 if (File.Exists(path))
                 {
                     reader?.Close();
@@ -185,13 +186,14 @@ namespace CSC240_08_02_ViewInvoices_LDM
         {
             try
             {
-                var item = fileComboBox.SelectedItem as ComboItem;
-                if (item == null) return;
+                if (listViewFiles.SelectedItems.Count == 0) return;
+                var sel = listViewFiles.SelectedItems[0];
+                string fileName = sel.SubItems[0].Text;
                 var confirm = MessageBox.Show("Archive selected file?", "Confirm Archive", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (confirm != DialogResult.Yes) return;
                 string dir = Path.GetDirectoryName(FILENAME);
                 if (string.IsNullOrEmpty(dir)) dir = Application.StartupPath;
-                string path = Path.Combine(dir, item.FileName);
+                string path = Path.Combine(dir, fileName);
                 if (!File.Exists(path)) return;
 
                 string archiveDir = Path.Combine(dir, "Archive");
@@ -218,8 +220,8 @@ namespace CSC240_08_02_ViewInvoices_LDM
                 }
 
                 // update UI
-                fileComboBox.Items.Remove(item);
-                if (fileComboBox.Items.Count > 0) fileComboBox.SelectedIndex = fileComboBox.Items.Count - 1;
+                listViewFiles.Items.Remove(sel);
+                if (listViewFiles.Items.Count > 0) listViewFiles.Items[listViewFiles.Items.Count - 1].Selected = true;
             }
             catch
             {
@@ -231,13 +233,14 @@ namespace CSC240_08_02_ViewInvoices_LDM
         {
             try
             {
-                var item = fileComboBox.SelectedItem as ComboItem;
-                if (item == null) return;
+                if (listViewFiles.SelectedItems.Count == 0) return;
+                var sel = listViewFiles.SelectedItems[0];
+                string fileName = sel.SubItems[0].Text;
                 var confirm = MessageBox.Show("Permanently delete selected invoice file? This cannot be undone.", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (confirm != DialogResult.Yes) return;
                 string dir = Path.GetDirectoryName(FILENAME);
                 if (string.IsNullOrEmpty(dir)) dir = Application.StartupPath;
-                string path = Path.Combine(dir, item.FileName);
+                string path = Path.Combine(dir, fileName);
                 if (!File.Exists(path)) return;
                 File.Delete(path);
 
@@ -259,8 +262,8 @@ namespace CSC240_08_02_ViewInvoices_LDM
                     }
                 }
 
-                fileComboBox.Items.Remove(item);
-                if (fileComboBox.Items.Count > 0) fileComboBox.SelectedIndex = fileComboBox.Items.Count - 1;
+                listViewFiles.Items.Remove(sel);
+                if (listViewFiles.Items.Count > 0) listViewFiles.Items[listViewFiles.Items.Count - 1].Selected = true;
             }
             catch
             {
