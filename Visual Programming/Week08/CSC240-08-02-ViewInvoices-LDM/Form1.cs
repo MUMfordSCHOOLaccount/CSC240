@@ -20,15 +20,20 @@ namespace CSC240_08_02_ViewInvoices_LDM
             FILENAME = GetInvoiceFilePath();
             try
             {
-                // If configured path points to a directory or is empty, try to use Index.txt to find latest file
-                if (string.IsNullOrEmpty(FILENAME) || Directory.Exists(FILENAME))
+                // If configured path points to a directory, use invoices.txt inside it
+                if (Directory.Exists(FILENAME))
                 {
-                    string dir = string.IsNullOrEmpty(FILENAME) ? Application.StartupPath : FILENAME;
+                    FILENAME = Path.Combine(FILENAME, "invoices.txt");
+                }
+
+                // If configured path is empty or doesn't point to a file, try to find latest via Index.txt
+                if (string.IsNullOrEmpty(FILENAME) || !File.Exists(FILENAME))
+                {
+                    string dir = string.IsNullOrEmpty(FILENAME) ? Application.StartupPath : Path.GetDirectoryName(FILENAME);
                     string indexPath = Path.Combine(dir, "Index.txt");
                     if (File.Exists(indexPath))
                     {
                         var lines = File.ReadAllLines(indexPath);
-                        // choose the last entry as the most recent
                         for (int i = lines.Length - 1; i >= 0; i--)
                         {
                             string candidate = Path.Combine(dir, lines[i]);
@@ -39,6 +44,36 @@ namespace CSC240_08_02_ViewInvoices_LDM
                             }
                         }
                     }
+                }
+
+                // Ensure parent directory exists
+                var dirPath = Path.GetDirectoryName(FILENAME);
+                if (string.IsNullOrEmpty(dirPath)) dirPath = Application.StartupPath;
+                if (!Directory.Exists(dirPath))
+                {
+                    Directory.CreateDirectory(dirPath);
+                }
+
+                // Ensure file exists
+                bool created = false;
+                if (!File.Exists(FILENAME))
+                {
+                    File.WriteAllText(FILENAME, string.Empty);
+                    created = true;
+                }
+
+                // Register in Index.txt if new
+                try
+                {
+                    if (created)
+                    {
+                        var indexPath = Path.Combine(dirPath, "Index.txt");
+                        File.AppendAllText(indexPath, Path.GetFileName(FILENAME) + Environment.NewLine);
+                    }
+                }
+                catch
+                {
+                    // ignore
                 }
 
                 file = new FileStream(FILENAME, FileMode.OpenOrCreate, FileAccess.Read);
