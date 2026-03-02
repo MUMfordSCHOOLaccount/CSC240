@@ -2,19 +2,19 @@ using System;
 using System.IO;
 using System.Windows.Forms;
 
-namespace CSC240_08_01_EnterInvoices_LDM
+namespace CSC240_08_01_CompleteInvoices_LDM
 {
-    public partial class Form1 : Form
+    public partial class EnterForm : Form
     {
         const string DELIM = ",";
         const string FILENAME = Path.Combine(Application.StartupPath, "invoices.txt");
         int num;
         string name;
         double amount;
-        static FileStream outFile = new FileStream(FILENAME, FileMode.Create, FileAccess.Write);
+        static FileStream outFile = new FileStream(FILENAME, FileMode.Append, FileAccess.Write);
         StreamWriter writer = new StreamWriter(outFile);
 
-        public Form1()
+        public EnterForm()
         {
             InitializeComponent();
         }
@@ -30,9 +30,9 @@ namespace CSC240_08_01_EnterInvoices_LDM
             amountBox.Clear();
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        private void EnterForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            // No additional code needed here as Dispose handles closing
+            // Dispose handles closing
         }
     }
 }
