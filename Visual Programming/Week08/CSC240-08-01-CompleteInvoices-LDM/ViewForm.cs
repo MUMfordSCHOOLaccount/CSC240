@@ -1,4 +1,5 @@
 using System;
+using System;
 using System.IO;
 using System.Windows.Forms;
 
@@ -13,18 +14,139 @@ namespace CSC240_08_01_CompleteInvoices_LDM
         static FileStream file;
         StreamReader reader;
 
+        // list of invoice files from index
+        string indexPath;
+
         public ViewForm()
         {
             InitializeComponent();
-            FILENAME = GetInvoiceFilePath();
+            indexPath = Path.Combine(Application.StartupPath, "index.txt");
+            LoadIndex();
+        }
+
+        private void ArchiveButton_Click(object sender, EventArgs e)
+        {
+            if (listBoxFiles.SelectedItem == null)
+            {
+                MessageBox.Show("Select a file first.", "No selection", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            var sel = listBoxFiles.SelectedItem.ToString();
+            var parts = sel.Split(',');
+            if (parts.Length < 2) return;
+            var fileName = parts[1];
+            var fullPath = Path.Combine(Application.StartupPath, fileName);
+
             try
             {
-                file = new FileStream(FILENAME, FileMode.Open, FileAccess.Read);
-                reader = new StreamReader(file);
+                if (!File.Exists(fullPath))
+                {
+                    MessageBox.Show("File not found: " + fullPath, "Not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                var archiveDir = Path.Combine(Application.StartupPath, "archive");
+                if (!Directory.Exists(archiveDir)) Directory.CreateDirectory(archiveDir);
+
+                var dest = Path.Combine(archiveDir, fileName);
+                int i = 1;
+                var baseName = Path.GetFileNameWithoutExtension(fileName);
+                var ext = Path.GetExtension(fileName);
+                while (File.Exists(dest))
+                {
+                    dest = Path.Combine(archiveDir, baseName + i.ToString() + ext);
+                    i++;
+                }
+
+                File.Move(fullPath, dest);
+
+                // remove entry from index
+                var lines = File.ReadAllLines(indexPath);
+                using (var sw = new StreamWriter(indexPath, false))
+                {
+                    foreach (var l in lines)
+                    {
+                        if (!l.Contains("," + fileName + ","))
+                        {
+                            sw.WriteLine(l);
+                        }
+                    }
+                }
+
+                LoadIndex();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                label1.Text = "Unable to open invoice file.";
+                MessageBox.Show("Error archiving file: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            if (listBoxFiles.SelectedItem == null)
+            {
+                MessageBox.Show("Select a file first.", "No selection", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            var sel = listBoxFiles.SelectedItem.ToString();
+            var parts = sel.Split(',');
+            if (parts.Length < 2) return;
+            var fileName = parts[1];
+            var fullPath = Path.Combine(Application.StartupPath, fileName);
+
+            var res = MessageBox.Show("Delete file " + fileName + "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (res != DialogResult.Yes) return;
+
+            try
+            {
+                if (File.Exists(fullPath)) File.Delete(fullPath);
+                // remove entry from index
+                var lines = File.ReadAllLines(indexPath);
+                using (var sw = new StreamWriter(indexPath, false))
+                {
+                    foreach (var l in lines)
+                    {
+                        if (!l.Contains("," + fileName + ","))
+                        {
+                            sw.WriteLine(l);
+                        }
+                    }
+                }
+                LoadIndex(); // Refresh the index after deletion
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error deleting file: " + ex.Message, "IO error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LoadIndex()
+        {
+            try
+            {
+                if (!File.Exists(indexPath))
+                {
+                    label1.Text = "No index found.";
+                    viewButton.Enabled = false;
+                    return;
+                }
+
+                listBoxFiles.Items.Clear();
+                using (var sr = new StreamReader(new FileStream(indexPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite)))
+                {
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        // index format: invoiceNumber,fileName,customerName
+                        listBoxFiles.Items.Add(line);
+                    }
+                }
+            }
+            catch
+            {
+                label1.Text = "Unable to load index.";
                 viewButton.Enabled = false;
             }
         }
@@ -57,18 +179,52 @@ namespace CSC240_08_01_CompleteInvoices_LDM
 
         private void ViewButton_Click(object sender, EventArgs e)
         {
+            // When the user clicks View, open the selected file and show its first record
+            if (listBoxFiles.SelectedItem == null)
+            {
+                MessageBox.Show("Select a file from the list first.", "No selection", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            var sel = listBoxFiles.SelectedItem.ToString();
+            var parts = sel.Split(',');
+            if (parts.Length < 2)
+            {
+                MessageBox.Show("Invalid index entry.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            var fileName = parts[1];
+            var fullPath = Path.Combine(Application.StartupPath, fileName);
+            if (!File.Exists(fullPath))
+            {
+                MessageBox.Show("Invoice file not found: " + fullPath, "Not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             try
             {
-                recordIn = reader.ReadLine();
-                fields = recordIn.Split(DELIM);
-                invoiceBox.Text = fields[0];
-                nameBox.Text = fields[1];
-                amountBox.Text = fields[2];
+                using (var fr = new StreamReader(fullPath))
+                {
+                    var line = fr.ReadLine();
+                    if (line == null)
+                    {
+                        MessageBox.Show("File is empty.", "Empty", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
+                    var f = line.Split(DELIM);
+                    if (f.Length >= 3)
+                    {
+                        invoiceBox.Text = f[0];
+                        nameBox.Text = f[1];
+                        amountBox.Text = f[2];
+                    }
+                }
             }
-            catch (NullReferenceException)
+            catch (Exception ex)
             {
-                label1.Text = "You have viewed\nall the records";
-                viewButton.Enabled = false;
+                MessageBox.Show("Error reading file: " + ex.Message, "IO error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -8,12 +8,26 @@ namespace CSC240_08_01_CompleteInvoices_LDM
 
         protected override void Dispose(bool disposing)
         {
-            reader.Close();
-            file.Close();
+            // Safely close streams if they are open
+            try
+            {
+                if (reader != null)
+                    reader.Close();
+            }
+            catch { }
+
+            try
+            {
+                if (file != null)
+                    file.Close();
+            }
+            catch { }
+
             if (disposing && (components != null))
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
@@ -27,6 +41,9 @@ namespace CSC240_08_01_CompleteInvoices_LDM
             this.nameBox = new System.Windows.Forms.TextBox();
             this.amountBox = new System.Windows.Forms.TextBox();
             this.viewButton = new System.Windows.Forms.Button();
+            this.listBoxFiles = new System.Windows.Forms.ListBox();
+            this.deleteButton = new System.Windows.Forms.Button();
+            this.archiveButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -97,22 +114,54 @@ namespace CSC240_08_01_CompleteInvoices_LDM
             this.viewButton.UseVisualStyleBackColor = true;
             this.viewButton.Click += new System.EventHandler(this.ViewButton_Click);
             // 
+            // listBoxFiles
+            // 
+            this.listBoxFiles.FormattingEnabled = true;
+            this.listBoxFiles.Location = new System.Drawing.Point(240, 40);
+            this.listBoxFiles.Name = "listBoxFiles";
+            this.listBoxFiles.Size = new System.Drawing.Size(160, 160);
+            this.listBoxFiles.TabIndex = 8;
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.Location = new System.Drawing.Point(240, 210);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteButton.TabIndex = 9;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            // 
+            // archiveButton
+            // 
+            this.archiveButton.Location = new System.Drawing.Point(325, 210);
+            this.archiveButton.Name = "archiveButton";
+            this.archiveButton.Size = new System.Drawing.Size(75, 23);
+            this.archiveButton.TabIndex = 10;
+            this.archiveButton.Text = "Archive";
+            this.archiveButton.UseVisualStyleBackColor = true;
+            this.archiveButton.Click += new System.EventHandler(this.ArchiveButton_Click);
+            // 
             // ViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 161);
+            this.ClientSize = new System.Drawing.Size(420, 220);
             this.Controls.Add(this.viewButton);
             this.Controls.Add(this.amountBox);
             this.Controls.Add(this.nameBox);
             this.Controls.Add(this.invoiceBox);
+            this.Controls.Add(this.listBoxFiles);
+            this.Controls.Add(this.deleteButton);
+            this.Controls.Add(this.archiveButton);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
+            this.MaximizeBox = true;
+            this.MinimizeBox = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Name = "ViewForm";
             this.Text = "View Invoices";
             this.ResumeLayout(false);
@@ -127,5 +176,8 @@ namespace CSC240_08_01_CompleteInvoices_LDM
         private System.Windows.Forms.TextBox nameBox;
         private System.Windows.Forms.TextBox amountBox;
         private System.Windows.Forms.Button viewButton;
+        private System.Windows.Forms.ListBox listBoxFiles;
+        private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.Button archiveButton;
     }
 }

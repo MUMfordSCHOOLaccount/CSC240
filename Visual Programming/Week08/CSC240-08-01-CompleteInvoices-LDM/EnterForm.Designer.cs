@@ -8,12 +8,26 @@ namespace CSC240_08_01_CompleteInvoices_LDM
 
         protected override void Dispose(bool disposing)
         {
-            writer.Close();
-            outFile.Close();
+            // Safely close streams if they are open
+            try
+            {
+                if (writer != null)
+                    writer.Close();
+            }
+            catch { }
+
+            try
+            {
+                if (outFile != null)
+                    outFile.Close();
+            }
+            catch { }
+
             if (disposing && (components != null))
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
@@ -44,9 +58,9 @@ namespace CSC240_08_01_CompleteInvoices_LDM
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 43);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 13);
+            this.label2.Size = new System.Drawing.Size(120, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Invoice number";
+            this.label2.Text = "Invoice number (auto)";
             // 
             // label3
             // 
@@ -70,6 +84,7 @@ namespace CSC240_08_01_CompleteInvoices_LDM
             // 
             this.invoiceBox.Location = new System.Drawing.Point(120, 40);
             this.invoiceBox.Name = "invoiceBox";
+            this.invoiceBox.ReadOnly = true;
             this.invoiceBox.Size = new System.Drawing.Size(100, 20);
             this.invoiceBox.TabIndex = 4;
             // 
@@ -101,7 +116,7 @@ namespace CSC240_08_01_CompleteInvoices_LDM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 161);
+            this.ClientSize = new System.Drawing.Size(420, 220);
             this.Controls.Add(this.enterButton);
             this.Controls.Add(this.amountBox);
             this.Controls.Add(this.nameBox);
@@ -110,9 +125,10 @@ namespace CSC240_08_01_CompleteInvoices_LDM
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
+            this.MaximizeBox = true;
+            this.MinimizeBox = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Name = "EnterForm";
             this.Text = "Enter Invoices";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EnterForm_FormClosing);
