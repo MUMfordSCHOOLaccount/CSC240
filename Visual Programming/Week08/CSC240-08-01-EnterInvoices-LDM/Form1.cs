@@ -1,5 +1,7 @@
 ﻿using System;
 using System;
+using System.Configuration;
+using System.Xml;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,8 +19,8 @@ namespace CSC240_08_01_EnterInvoices_LDM
         // delimiter used to separate fields in the file
         private const string delim = ",";
 
-        // file path for stored invoices
-        private const string fileName = @"D:\SCHOOL\SCHOOL\GitHubFolder\CSC-240 Visual Programming\Git\CSC240\Visual Programming\Week08\CsharpInvoices\invoices.txt";
+        // file path for stored invoices (configurable via App.config key "InvoiceFilePath")
+        private string fileName;
 
         // variables for the current invoice being entered
         private int num;
@@ -33,9 +35,39 @@ namespace CSC240_08_01_EnterInvoices_LDM
         {
             InitializeComponent();
 
-            // ensure directory exists then open the output file
+            // determine file path: use App.config AppSettings["InvoiceFilePath"] if set, otherwise default to application folder
             try
             {
+                string configuredPath = null;
+                try
+                {
+                    var configPath = AppDomain.CurrentDomain.SetupInformation.ConfigurationFile;
+                    if (File.Exists(configPath))
+                    {
+                        var doc = new XmlDocument();
+                        doc.Load(configPath);
+                        var node = doc.SelectSingleNode("//appSettings/add[@key='InvoiceFilePath']");
+                        if (node != null && node.Attributes != null)
+                        {
+                            configuredPath = node.Attributes["value"]?.Value;
+                        }
+                    }
+                }
+                catch
+                {
+                    configuredPath = null;
+                }
+
+                if (string.IsNullOrWhiteSpace(configuredPath))
+                {
+                    fileName = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "invoices.txt");
+                }
+                else
+                {
+                    fileName = configuredPath;
+                }
+
+                // ensure directory exists then open the output file
                 var dir = System.IO.Path.GetDirectoryName(fileName);
                 if (!string.IsNullOrEmpty(dir))
                     System.IO.Directory.CreateDirectory(dir);
