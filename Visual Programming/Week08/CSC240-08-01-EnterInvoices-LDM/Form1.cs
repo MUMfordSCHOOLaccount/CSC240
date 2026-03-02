@@ -1,26 +1,24 @@
-﻿using System;
 using System;
-using System.Configuration;
-using System.Xml;
+<<<<<<< Updated upstream
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+=======
+>>>>>>> Stashed changes
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CSC240_08_01_EnterInvoices_LDM
 {
     public partial class Form1 : Form
     {
+<<<<<<< Updated upstream
         // delimiter used to separate fields in the file
         private const string delim = ",";
 
-        // file path for stored invoices (configurable via App.config key "InvoiceFilePath")
-        private string fileName;
+        // file path for stored invoices
+        private const string fileName = @"D:\SCHOOL\SCHOOL\GitHubFolder\CSC-240 Visual Programming\Git\CSC240\Visual Programming\Week08\CsharpInvoices\invoices.txt";
 
         // variables for the current invoice being entered
         private int num;
@@ -30,44 +28,24 @@ namespace CSC240_08_01_EnterInvoices_LDM
         // file stream and writer for output
         private FileStream outFile;
         private StreamWriter writer;
+=======
+        const string DELIM = ",";
+        const string FILENAME = Path.Combine(Application.StartupPath, "invoices.txt");
+        int num;
+        string name;
+        double amount;
+        static FileStream outFile = new FileStream(FILENAME, FileMode.Create, FileAccess.Write);
+        StreamWriter writer = new StreamWriter(outFile);
+>>>>>>> Stashed changes
 
         public Form1()
         {
             InitializeComponent();
+<<<<<<< Updated upstream
 
-            // determine file path: use App.config AppSettings["InvoiceFilePath"] if set, otherwise default to application folder
+            // ensure directory exists then open the output file
             try
             {
-                string configuredPath = null;
-                try
-                {
-                    var configPath = AppDomain.CurrentDomain.SetupInformation.ConfigurationFile;
-                    if (File.Exists(configPath))
-                    {
-                        var doc = new XmlDocument();
-                        doc.Load(configPath);
-                        var node = doc.SelectSingleNode("//appSettings/add[@key='InvoiceFilePath']");
-                        if (node != null && node.Attributes != null)
-                        {
-                            configuredPath = node.Attributes["value"]?.Value;
-                        }
-                    }
-                }
-                catch
-                {
-                    configuredPath = null;
-                }
-
-                if (string.IsNullOrWhiteSpace(configuredPath))
-                {
-                    fileName = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "invoices.txt");
-                }
-                else
-                {
-                    fileName = configuredPath;
-                }
-
-                // ensure directory exists then open the output file
                 var dir = System.IO.Path.GetDirectoryName(fileName);
                 if (!string.IsNullOrEmpty(dir))
                     System.IO.Directory.CreateDirectory(dir);
@@ -172,37 +150,24 @@ namespace CSC240_08_01_EnterInvoices_LDM
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
+=======
+>>>>>>> Stashed changes
         }
 
         private void EnterButton_Click(object sender, EventArgs e)
         {
-            // read values from text boxes, write to file, and clear boxes
             num = Convert.ToInt32(invoiceBox.Text);
-            custName = nameBox.Text;
+            name = nameBox.Text;
             amount = Convert.ToDouble(amountBox.Text);
-
-            if (writer != null)
-                writer.WriteLine(num + delim + custName + delim + amount);
-
+            writer.WriteLine(num + DELIM + name + DELIM + amount);
             invoiceBox.Clear();
             nameBox.Clear();
             amountBox.Clear();
-            invoiceBox.Focus();
         }
-        
+
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            // close writer and outFile when form is closing
-            try
-            {
-                writer?.Flush();
-                writer?.Close();
-                outFile?.Close();
-            }
-            catch
-            {
-                // ignore
-            }
+            // No additional code needed here as Dispose handles closing
         }
     }
 }
