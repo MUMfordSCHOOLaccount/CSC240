@@ -7,11 +7,14 @@
     <ProjectGuid>{8DDE1C74-5F93-47C8-8819-41D8143A0335}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>CSC240_ProjectTicTacToe_LDM</RootNamespace>
-    <AssemblyName>CSC240-ProjectTicTacToe-LDM</AssemblyName>
+    <AssemblyName>RickTacToe</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\RickTacToe.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -27,7 +30,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>.\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -111,3 +114,5 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
+
+

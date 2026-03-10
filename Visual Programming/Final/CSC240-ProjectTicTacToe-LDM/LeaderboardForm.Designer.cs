@@ -127,7 +127,7 @@ namespace CSC240_ProjectTicTacToe_LDM
             this.MinimizeBox = false;
             this.Name = "LeaderboardForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Leaderboard";
+            this.Text = "Rick-Tac-Toe - Leaderboard";
             this.Load += new System.EventHandler(this.LeaderboardForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLeaderboard)).EndInit();
             this.ResumeLayout(false);

@@ -111,7 +111,7 @@ namespace CSC240_ProjectTicTacToe_LDM
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(800, 60);
             this.lblTitle.TabIndex = 1;
-            this.lblTitle.Text = "TIC-TAC-TOE";
+            this.lblTitle.Text = "RICK-TAC-TOE";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // grpGameMode
@@ -361,7 +361,7 @@ namespace CSC240_ProjectTicTacToe_LDM
             this.MaximizeBox = false;
             this.Name = "StartScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tic-Tac-Toe - Welcome";
+            this.Text = "Rick-Tac-Toe - Welcome";
             this.Load += new System.EventHandler(this.StartScreen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picTitleImage)).EndInit();
             this.pnlPlayerSetup.ResumeLayout(false);

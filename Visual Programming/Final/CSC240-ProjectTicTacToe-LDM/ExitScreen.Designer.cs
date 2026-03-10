@@ -88,7 +88,7 @@ namespace CSC240_ProjectTicTacToe_LDM
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ExitScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Goodbye";
+            this.Text = "Rick-Tac-Toe - Goodbye";
             this.Load += new System.EventHandler(this.ExitScreen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picExitImage)).EndInit();
             this.ResumeLayout(false);

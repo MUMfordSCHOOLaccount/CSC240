@@ -120,7 +120,7 @@ namespace CSC240_ProjectTicTacToe_LDM
             this.MinimizeBox = false;
             this.Name = "GameOverScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Game Over";
+            this.Text = "Rick-Tac-Toe - Game Over";
             this.Load += new System.EventHandler(this.GameOverScreen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picResultImage)).EndInit();
             this.pnlButtons.ResumeLayout(false);
