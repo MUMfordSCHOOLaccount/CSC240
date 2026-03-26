@@ -455,3 +455,23 @@ $RECYCLE.BIN/
 .DS_Store
 .AppleDouble
 .LSOverride
+
+# Android/Gradle
+.gradle/
+**/android/
+**/android/.gradle/
+**/android/build/
+**/android/app/build/
+**/android/.idea/
+**/android/local.properties
+**/android/.cxx/
+**/android/.settings/
+**/android/.externalNativeBuild/
+**/android/.DS_Store
+**/android/captures/
+**/android/.project
+**/android/.classpath
+**/android/.settings/
+**/android/.externalNativeBuild/
+**/android/.idea/
+**/android/.vscode/
